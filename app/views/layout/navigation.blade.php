@@ -4,6 +4,7 @@
 		@if(Auth::check())
 		<li><a href="{{ URL::route('account-sign-out') }}">Sign out</a></li>
 		<li><a href="{{ URL::route('account-change-password') }}">Change password</a></li>
+		<li><a href="{{ URL::route('tag-current-location') }}">Tag a Hotspot!</a></li>
 
 
 		@else

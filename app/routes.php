@@ -5,6 +5,7 @@ Route::get('/', array(
 	'uses' => 'HomeController@home'
 ));
 
+//see user profile
 Route::get('/user/{username}', array(
 	'as' => 'profile-user',
 	'uses' => 'ProfileController@user'
@@ -37,6 +38,12 @@ Route::group(array('before' => 'auth'), function() {
 	Route::get('/account/sign-out', array(
 		'as' 	=> 'account-sign-out',
 		'uses'	=> 'AccountController@getSignOut'
+		));
+
+	//tag hotspot (GET)
+	Route::get('/tag/current-location', array(
+		'as'	=>'tag-current-location',
+		'uses' 	=>'HotspotController@tagCurrentLocation'
 		));
 
 });

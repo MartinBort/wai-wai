@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Authentication System</title>
+		<title>Wai-Wai</title>
 	</head>
 	<body>
 
