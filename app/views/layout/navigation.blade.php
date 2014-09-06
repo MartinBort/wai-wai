@@ -2,9 +2,10 @@
 	<ul>
 		<li><a href="{{ URL::route('home') }}">Home</a></li>
 		@if(Auth::check())
-		<li><a href="{{ URL::route('account-sign-out') }}">Sign out</a></li>
-		<li><a href="{{ URL::route('account-change-password') }}">Change password</a></li>
+		<li><a href="{{ URL::route('user-home') }}">My Profile</a></li>
+		<!-- <li><a href="{{ URL::route('account-change-password') }}">Change password</a></li> -->
 		<li><a href="{{ URL::route('tag-current-location') }}">Tag a Hotspot!</a></li>
+		<li><a href="{{ URL::route('account-sign-out') }}">Sign out</a></li>
 
 
 		@else

@@ -12,8 +12,15 @@ class ProfileController extends BaseController {
 		}
 
 		return App::abort(404);
+	}
 
-		
+	public function getUserHome() {
+
+		$user_id 	= Auth::user()->id;
+		$user 		= User::where('id', '=', $user_id)->first();
+
+		return View::make('profile.user-home')->with('user', $user);
+
 	}
 
 

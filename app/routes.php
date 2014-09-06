@@ -26,7 +26,26 @@ Route::group(array('before' => 'auth'), function() {
 		'uses'	=> 'AccountController@postChangePassword'
 		));
 
+		//tag spot (POST)
+		Route::post('/account/change-password', array(
+		'as' 	=> 'create-spot',
+		'uses'	=> 'SpotController@postCreateSpot'
+		));
+
+		//edit-spot (POST)
+		Route::post('/spot', array(
+			'as' => 'edit-spot-post',
+			'uses' => 'SpotController@postEditSpot'
+		));
+
 	});
+
+	//User home (GET)
+	Route::get('/user', array(
+		'as' => 'user-home',
+		'uses' => 'ProfileController@getUserHome'
+	));
+
 
 	//change password (GET)
 	Route::get('/account/change-password', array(
@@ -40,11 +59,23 @@ Route::group(array('before' => 'auth'), function() {
 		'uses'	=> 'AccountController@getSignOut'
 		));
 
-	//tag hotspot (GET)
+	//tag spot (GET)
 	Route::get('/tag/current-location', array(
 		'as'	=>'tag-current-location',
-		'uses' 	=>'HotspotController@tagCurrentLocation'
+		'uses' 	=>'SpotController@tagCurrentLocation'
 		));
+
+	//edit spot(GET)
+	Route::get('/spot/{spot_id}', array(
+		'as' => 'edit-spot',
+		'uses' => 'SpotController@getEditSpot'
+	));
+
+	//delete spot
+	Route::get('/spot-delete/{spot_id}', array(
+		'as' => 'delete-spot',
+		'uses' => 'SpotController@deleteSpot'
+	));
 
 });
 
