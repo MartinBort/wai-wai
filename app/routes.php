@@ -65,16 +65,22 @@ Route::group(array('before' => 'auth'), function() {
 		'uses' 	=>'SpotController@tagCurrentLocation'
 		));
 
+	//view spot(GET)
+	Route::get('/spot-view/{spot_id}', array(
+		'as' 	=> 'view-spot',
+		'uses' 	=> 'SpotController@getViewSpot'
+	));
+
 	//edit spot(GET)
 	Route::get('/spot/{spot_id}', array(
-		'as' => 'edit-spot',
-		'uses' => 'SpotController@getEditSpot'
+		'as' 	=> 'edit-spot',
+		'uses'	=> 'SpotController@getEditSpot'
 	));
 
 	//delete spot
 	Route::get('/spot-delete/{spot_id}', array(
-		'as' => 'delete-spot',
-		'uses' => 'SpotController@deleteSpot'
+		'as' 	=> 'delete-spot',
+		'uses' 	=> 'SpotController@deleteSpot'
 	));
 
 });

@@ -7,7 +7,23 @@ class SpotController extends BaseController {
 
 	public function postCreateSpot() {
 
+		/*
+		//testing POST
+		$tags = Input::get('tags');
+			foreach ((array) $tags as $tagData)
+			{
+			   // validate user_id and tag_name first
+			   $tag = Tag::create(array_only($tagData, ['user_id', 'tag_name']));
+			}
+
+		return View::make('spots.test')->with('tags', $tags);
+		*/
+
+
+		//$inputs = Input::all();
 		//return View::make('spots.test')->with('inputs', $inputs);
+		
+		
 		$validator = Validator::make(Input::all(),
 			array(
 				'spot_name' => 'required|max:50',
@@ -32,10 +48,33 @@ class SpotController extends BaseController {
 	        $spot->comments 		= Input::get('comments');
 	        $spot->save();
 
+	        //get spot_id for tags table
+	        $spot_id	= $spot->spot_id;
+
+	        //dynamic tags
+			$tags = Input::get('tags');
+			foreach ((array) $tags as $tagData)
+			{
+				$tag = Tag::create(array_only($tagData, ['user_id', 'tag_name']));
+				$tag->spot_id = $spot_id;				
+				$tag->save();			    
+			}
+
 	        return Redirect::route('home')
 							->with('global', 'Spot successfully tagged. You can edit all your spots on your profile.');
 		}
+		
+	}
 
+	public function getViewSpot($spot_id) {
+		$spot = Spot::where('spot_id', '=', $spot_id); //query
+
+		if($spot->count()) { //if exist in DB
+			$spot = $spot->first(); //first record returned from query
+
+			return View::make('spots.view-spot')
+				->with('spot', $spot);
+			}
 	}
 
 	public function getEditSpot($spot_id) {

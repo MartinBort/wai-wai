@@ -12,7 +12,7 @@
 		<div id="map-canvas" style="height:200px;width:300px;"></div>
 		<form action="{{ URL::route('create-spot') }}" method="post">
 
-			<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+			<input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
 			<input type="hidden" id="lat" value="" name="lat">
 			<input type="hidden" id="lng" value="" name="lng">
 
@@ -23,7 +23,7 @@
 				@endif
 			</span>
 
-			<p>Add a tag: <input type="text" name="tag" id="input-tag"><button onClick="return false;" id="addtag">+</button></p>
+			<p>Add a tag: <input type="text" id="input-tag"><button onClick="return false;" id="addtag">+</button></p>
 			<div id="tagsbox"></div>
 
 			<p>Location notes: <input type="textarea" name="location_notes" {{ (Input::old('location_notes')) ? ' value="' . e(Input::old('location_notes')) .'" ' : ' ' }}></p>
@@ -37,6 +37,8 @@
 			{{ Form::token() }}
 
 		</form>
+
+		<button id="showArr">Click</button>
 
 		{{ HTML::script('js/tag-current-location.js') }}
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}

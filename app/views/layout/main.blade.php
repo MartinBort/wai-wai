@@ -4,6 +4,7 @@
 		<title>Wai-Wai</title>
 	</head>
 	<body>
+		@include('layout.search')
 
 		@if(Session::has('global'))
 			<p> {{ Session::get('global') }} </p>
