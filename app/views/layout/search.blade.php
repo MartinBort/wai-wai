@@ -1,7 +1,7 @@
-<form id="searchForm" method="get">
+<form id="searchForm" action="{{ URL::route('search-tags') }}" method="GET">
 	<div id="omniboxWrap">
 		<p><label for="omnibox"><i>Search </i></label>
-			<input type="text" id="name" name="name" placeholder="search for tags"> <!-- id was 'omnibox' -->
+			<input type="text" id="omnibox" name="search-term" placeholder="search for tags">
 
 			<button class="btnSearch">Go</button>
 
@@ -16,6 +16,8 @@
 		</p>
     </div>
 </form>
+<div id="search-results"></div>
 <hr>
-{{ HTML::script('js/jquery-1.11.1.min.js') }}
-{{ HTML::script('js/omnibox.js') }}
+{{ HTML::script('js/jquery-1.11.1.js') }}
+{{ HTML::script('js/search/searchtags.js') }}
+{{ HTML::script('js/search/omnibox.js') }}

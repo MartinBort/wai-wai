@@ -25,6 +25,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	//define relationship between tables
 	public function spots() {
 
 		return $this->hasMany('Spot'); 

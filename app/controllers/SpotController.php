@@ -128,8 +128,14 @@ class SpotController extends BaseController {
 		if($spot->count()) { //if exist in DB
 			$spot = $spot->first(); //first record returned from query
 
-			//delete record
+			//join tables spots with tags
+			DB::table('spots')
+				->join('tags', 'spots.spot_id', '=', 'tags.spot_id');
+				$tags =  Tag::where('tags.spot_id', '=', $spot->spot_id );
+
+			//delete Spot and associated tags
 			$spot->delete();
+			$tags->delete();
 
 			return Redirect::route('user-home')
 				->with('global', 'Spot successfully deleted');

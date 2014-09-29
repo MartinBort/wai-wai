@@ -9,7 +9,7 @@
 
 <ul>
 @foreach ($user->spots as $spots)
-		<li><a href="{{ URL::route('view-spot', $spots->spot_id) }}">{{ $spots->spot_name }}  <br> 
+		<li><a href="{{ URL::route('view-spot', $spots->spot_id) }}">{{ $spots->spot_name }}</a><br> 
 			<a href="{{ URL::route('edit-spot', $spots->spot_id) }}">Edit spot</a></li><br>
 @endforeach
 </ul>

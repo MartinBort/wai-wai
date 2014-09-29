@@ -11,6 +11,11 @@ Route::get('/user/{username}', array(
 	'uses' => 'ProfileController@user'
 ));
 
+//AJAX search
+Route::get('/search', array(
+	'as'	=> 'search-tags',
+	'uses'	=> 'AjaxRequestController@searchTags'
+));
 
 /*=========================*/
 //	authenticated group    //

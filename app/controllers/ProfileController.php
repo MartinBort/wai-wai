@@ -16,7 +16,7 @@ class ProfileController extends BaseController {
 
 	public function getUserHome() {
 
-		$user_id 	= Auth::user()->id;
+		$user_id 	= Auth::user()->id; //get id of user logged in
 		$user 		= User::where('id', '=', $user_id)->first();
 
 		return View::make('profile.user-home')->with('user', $user);
