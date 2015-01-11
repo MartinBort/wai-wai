@@ -6,4 +6,9 @@ class Tag extends eloquent
 	protected $fillable = array('user_id', 'tag_name');
 
 	protected $primaryKey = "tag_id";	//change primary key from just "id"
+
+	public function spot()
+    {
+        return $this->belongsTo('Spot');
+    }
 }

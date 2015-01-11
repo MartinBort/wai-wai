@@ -17,7 +17,7 @@
 
 			<p>Spot name: <input type="text" name="spot_name" value="{{$spot->spot_name}}" readonly></p>
 
-			<p>Location notes: <textarea readonly>{{$spot->location_notes}}></textarea></p>
+			<p>Location notes: <textarea readonly>{{$spot->location_notes}}</textarea></p>
 
 			<p>Comments: <textarea readonly>{{$spot->comments}}</textarea></p>			
 

@@ -7,7 +7,7 @@ class AjaxRequestController extends BaseController {
 
 		$data = DB::table('spots')
 			->join('tags', 'spots.spot_id', '=', 'tags.spot_id')
-			->select('spots.spot_id', 'spots.spot_name', 'tags.tag_name')
+			->select('spots.spot_id', 'spots.spot_name', 'spots.latitude', 'spots.longitude', 'tags.tag_name')
 			->where('tags.tag_name', 'LIKE', '%'. $searchTerm .'%')
 			->get();
 		

@@ -45,6 +45,18 @@ Route::group(array('before' => 'auth'), function() {
 
 	});
 
+	//main map AJAX REQUEST (GET)
+		Route::get('/location/ajax', array(
+			'as' => 'home-map-post',
+			'uses' => 'HomeController@postHomeMap'
+		));
+
+	//main map (GET)
+	Route::get('/location/home', array(
+		'as' => 'home-map',
+		'uses' => 'HomeController@getHomeMap'
+	));
+
 	//User home (GET)
 	Route::get('/user', array(
 		'as' => 'user-home',
@@ -120,7 +132,6 @@ Route::group(array('before' => 'guest'), function() {
 		));
 
 	});
-
 
 	//forgot password (GET)
 	Route::get('account/forgot-password', array(
