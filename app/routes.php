@@ -45,10 +45,10 @@ Route::group(array('before' => 'auth'), function() {
 
 	});
 
-	//main map AJAX REQUEST (GET)
+	//main map AJAX REQUEST
 		Route::get('/location/ajax', array(
-			'as' => 'home-map-post',
-			'uses' => 'HomeController@postHomeMap'
+			'as' => 'home-map-ajax',
+			'uses' => 'HomeController@ajaxHomeMap'
 		));
 
 	//main map (GET)

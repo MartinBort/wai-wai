@@ -13,7 +13,7 @@ class HomeController extends BaseController {
 		return View::make('home-map');
 	}
 
-	public function postHomeMap()
+	public function ajaxHomeMap()
 	{
 		$latpoint = Input::get('latitude');
 		$longpoint = Input::get('longitude');
@@ -29,8 +29,8 @@ class HomeController extends BaseController {
 										                 * SIN(RADIANS(z.latitude)))) AS distance_in_km
 										  FROM spots AS z
 										  JOIN (   /* these are the query parameters */
-										        SELECT  '$latpoint'  AS latpoint,  '$longpoint' AS longpoint, /*lat lng variables*/
-										                50.0 AS radius,      111.045 AS distance_unit
+										        SELECT  '$latpoint'  AS latpoint,  '$longpoint' AS longpoint, /*pass lat lng variables*/
+										                5.0 AS radius,      111.045 AS distance_unit
 										    ) AS p ON 1=1
 										  WHERE z.latitude
 										     BETWEEN p.latpoint  - (p.radius / p.distance_unit)
@@ -43,7 +43,7 @@ class HomeController extends BaseController {
 
 		//return result to view
 		//return View::make('home-map')->with('results', $results);
-		if(Request::ajax()){ //on keyup
+		if(Request::ajax()){
 
 		    return json_encode($results);  //turn the result value to JSON so it can be handled in JQuery
 		
