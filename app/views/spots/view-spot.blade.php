@@ -21,6 +21,8 @@
 
 			<p>Comments: <textarea readonly>{{$spot->comments}}</textarea></p>			
 
+			<!-- TODO get view-directions working -->
+			<a href="{{ URL::route('view-directions', $spot->latitude, $spot->longitude) }}">View directions</a>
 			<a href="{{ URL::previous() }}">Back</a>
 			
 			{{ Form::token() }}

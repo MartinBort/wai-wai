@@ -10,7 +10,7 @@ class HomeController extends BaseController {
 
 	public function getHomeMap()
 	{
-		return View::make('home-map');
+		return View::make('home-map');		
 	}
 
 	public function ajaxHomeMap()

@@ -88,6 +88,13 @@ Route::group(array('before' => 'auth'), function() {
 		'uses' 	=> 'SpotController@getViewSpot'
 	));
 
+	//view directions to spot(GET) GET THIS WORKING
+	Route::get('/spot-directions/{lat}/{lng}', array(
+		'as' 	=> 'view-directions',
+		'uses' 	=> 'SpotController@spotDirectionsGet'
+	));
+
+
 	//edit spot(GET)
 	Route::get('/spot/{spot_id}', array(
 		'as' 	=> 'edit-spot',

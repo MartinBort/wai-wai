@@ -5,24 +5,7 @@ class SpotController extends BaseController {
 		return View::make('spots.new-spot-current-location');
 	}
 
-	public function postCreateSpot() {
-
-		/*
-		//testing POST
-		$tags = Input::get('tags');
-			foreach ((array) $tags as $tagData)
-			{
-			   // validate user_id and tag_name first
-			   $tag = Tag::create(array_only($tagData, ['user_id', 'tag_name']));
-			}
-
-		return View::make('spots.test')->with('tags', $tags);
-		*/
-
-
-		//$inputs = Input::all();
-		//return View::make('spots.test')->with('inputs', $inputs);
-		
+	public function postCreateSpot() {		
 		
 		$validator = Validator::make(Input::all(),
 			array(
@@ -141,6 +124,14 @@ class SpotController extends BaseController {
 				->with('global', 'Spot successfully deleted');
 			}
 
+	}
+
+	public function spotDirectionsGet($lat, $lang)
+	{
+		//TODO get this working
+		$coordinates = array('lat'=> $lat, 'lng'=> $lng);
+
+		return View::make('spots.directions-map')->with($coordinates);	
 	}
 
 
