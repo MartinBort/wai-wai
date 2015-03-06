@@ -18,6 +18,5 @@
 </form>
 <div id="search-results"></div>
 <hr>
-{{ HTML::script('js/jquery-1.11.1.js') }}
 {{ HTML::script('js/search/searchtags.js') }}
 {{ HTML::script('js/search/omnibox.js') }}

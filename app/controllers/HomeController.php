@@ -5,7 +5,15 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-		return View::make('home');
+		if (Auth::check()){
+			
+		    return View::make('home-map');
+
+		} else {
+
+			return View::make('home');			
+		}
+		
 	}
 
 	public function getHomeMap()

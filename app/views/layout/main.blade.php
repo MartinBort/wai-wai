@@ -2,16 +2,21 @@
 <html>
 	<head>
 		<title>Wai-Wai</title>
+		<!--Google CDN provided JQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- normalize.css for resetting css across all browsers -->
+		{{ HTML::style('css/normalize.min.css') }}
+
 	</head>
 	<body>
-		@include('layout.search')
 
 		@if(Session::has('global'))
 			<p> {{ Session::get('global') }} </p>
 
 		@endif
 
-		@include('layout.navigation')
+		<!-- Content is generated from blade which extends this main.blade -->
 		@yield('content')
+
 	</body>
 </html>
