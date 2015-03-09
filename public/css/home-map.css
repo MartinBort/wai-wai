@@ -7,21 +7,47 @@
 	bottom: 0;
 }
 
-.menu-btn {
+.btnInstance {
 	position: absolute;
-	height: 80px;
-	width: 80px;
+	height: 4em;
+	width: 4em;
 	z-index: 1;
 	background: rgba(52, 73, 94, 0.8);
 }
 
-#user-btn {
+#menuBtn {
 	bottom: 0;
 	right: 0;
 }
 
-#settings-btn {
-	bottom: 0;
-	left: 0;
+#searchBtn {
+	top: 0;
+	right: 0;
 }
+
+#mapMask {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+#menuPanel {
+	position: fixed;
+	height: 100%;
+	width: 80%;
+	right: 0;
+	z-index: 3;
+	margin-right: -80%;
+	background: red;
+}
+
+#closeMenuPanel {
+	position: absolute;
+	right: 0;
+	height: 3em;
+}
+
 

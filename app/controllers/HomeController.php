@@ -3,7 +3,7 @@
 class HomeController extends BaseController {
 
 
-	public function home()
+	public function getHome()
 	{
 		if (Auth::check()){
 			

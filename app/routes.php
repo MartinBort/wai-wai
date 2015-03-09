@@ -2,7 +2,7 @@
 
 Route::get('/', array(
 	'as' => 'home',
-	'uses' => 'HomeController@home'
+	'uses' => 'HomeController@getHome'
 ));
 
 //see user profile

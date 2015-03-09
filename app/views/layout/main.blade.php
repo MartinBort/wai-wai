@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Wai-Wai</title>
+		<title>Wai Wai</title>
 		<!--Google CDN provided JQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- normalize.css for resetting css across all browsers -->
