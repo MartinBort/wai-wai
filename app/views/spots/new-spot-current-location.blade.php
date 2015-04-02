@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<title>Tag a Spot!</title>
-		
+		<!-- Prevent iphone browsers from zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	</head>
 	<body>
 
-		{{ Auth::user()->username }}
+		<!--{{ Auth::user()->username }}-->
+		<a href="{{ URL::route('home') }}">X</a>
 		
 		<div id="map-canvas" style="height:200px;width:300px;"></div>
 		<form action="{{ URL::route('create-spot') }}" method="post">
@@ -30,15 +32,19 @@
 
 			<p>Comments: <input type="textarea" name="comments" {{ (Input::old('comments')) ? ' value="' . e(Input::old('comments')) .'" ' : ' ' }}></p>
 
+			<!--
 			<p>Add a photo?: <input type="file" name="photo" accept="image/x-png, image/jpeg" {{ (Input::old('photo')) ? ' value="' . e(Input::old('photo')) .'" ' : ' ' }}></p>
+			-->
 
-			<a href="{{ URL::route('home') }}">Cancel</a><input type="submit" value="Create spot">
+			<input type="submit" value="Create spot">
 
 			{{ Form::token() }}
 
 		</form>
 
+		<!-- debug tag js
 		<button id="showArr">Click</button>
+		-->
 
 		{{ HTML::script('js/tag-current-location.js') }}
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}

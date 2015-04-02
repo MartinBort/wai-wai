@@ -1,17 +1,42 @@
-@extends('layout.main')
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wai Wai</title>
+		<!-- Prevent iphone browsers from zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<!-- normalize.css for resetting css across all browsers -->
+		{{ HTML::style('css/normalize.min.css') }}
+		<!-- custom css -->
+		{{ HTML::style('css/home.css') }}
+	</head>
+	<body>
+		@if(Session::has('global'))
+			<p> {{ Session::get('global') }} </p>
+		@endif
 
-@section('content')
-	@if(Auth::check())
-		<p>Hello, {{ Auth::user()->username }} </p>
-		<!-- redirect to home-map -->
+		<div id="wrapper">
+			<div>
+				<div id="banner">
+					<img id="logo" src="img/banner/logo.png">
+					<a href="{{ URL::route('account-sign-in') }}">login</a>
+				</div>
+				<img id="hero" src="img/banner/home-banner.jpg">
+			</div>
 
-	@else
-		<a href="{{ URL::route('account-sign-in') }}">login</a>
-		<a href="">Tell me more</a>
-		<a href="{{ URL::route('account-create') }}">Sign me up!</a>
+			<h2>Wai Wai. A treasure map for Tokyo</h2>
+			<div class="btn-wrap">
+				<a href="">
+					<button class="btn">Tell me more</button>
+				</a>
+				<a href="{{ URL::route('account-create') }}">
+					<button class="btn">Sign me up!</button>
+				</a>
+			</div>
+		</div>
 
-	@endif
 
-
-
-@stop
+		{{ HTML::script('js/jquery-1.11.1.min.js') }}
+	</body>
+</html>

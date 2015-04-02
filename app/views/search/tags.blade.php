@@ -2,14 +2,14 @@
 
 <form id="results">	
 
-@foreach ($data as $object)
+@foreach ($data as $spot)
 		<div class="result">
 			<li>
-				<a href="{{ URL::route('view-spot', $object->spot_id) }}">
-					<b>{{ $object->spot_name }}</b>, 
-					<i>{{ $object->tag_name }}</i>
-					<input type="hidden" id="lat" value="{{ $object->latitude }}" name="lat">
-					<input type="hidden" id="lng" value="{{ $object->longitude }}" name="lng">
+				<a href="{{ URL::route('view-spot', $spot->spot_id) }}">
+					<b>{{ $spot->spot_name }}</b>, 
+					<i>{{ $spot->tag_name }}</i>
+					<input type="hidden" id="lat" value="{{ $spot->latitude }}" name="lat">
+					<input type="hidden" id="lng" value="{{ $spot->longitude }}" name="lng">
 				</a>
 			</li>
 		</div>				

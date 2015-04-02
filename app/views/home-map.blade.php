@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<title>Wai Wai</title>
-
 		<!-- Prevent iphone browsers from zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
 		<!-- Google maps API -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		{{ HTML::style('css/normalize.min.css') }}
@@ -15,30 +15,41 @@
 	<body>
 		
 		<div id="map-canvas"></div>
-		<div id="mapMask"></div>
+		<div id="mapMask"></div> <!-- covers map-canvas when menu is toggled -->
 
+		<!-- search panel -->
 		<div id="searchPanel">
-			<div class="row"><button id="closeSearchPanel">close</button></div>
+			<div class="row">
+				<div id="closeSearchPanel"><img src="img/x-btn-white.png"></div>
+			</div>
 			<div class="row">
 				<form action="{{ URL::route('search-tags') }}" method="GET">
-					<input type="search">
-				</form>
+					<input type="search" id="searchBox" placeholder="search for tags...">
+				</form>				
 			</div>
-
+			<!-- search toggle
+			<div class="row">
+				 
+				<button>Spots</button><button>Tags</button>
+			</div>
+			-->
+			<div id="searchResults"></div>
 		</div>
 
+		<!-- menu panel -->
 		<div id="menuPanel">
-			<button id="closeMenuPanel">close</button>
-			<ul>
-				<li><a href="{{ URL::route('user-home') }}">My spots</a></li>
-				<li>Favourites</li>
-				<li>Account settings</li>
-				<li><a href="{{ URL::route('account-sign-out') }}">Sign out</a></li>
-			</ul>
+			<div id="closeMenuPanel"><img src="img/x-btn-grey.png"></div>
+				<div class="profileMenuBtnWrapper">
+					<a href="{{ URL::route('user-home') }}"><button class="profileMenuBtn">My spots</button></a>
+					<button class="profileMenuBtn">Favourites</button>
+					<button class="profileMenuBtn">Account settings</button>
+					<a href="{{ URL::route('account-sign-out') }}"><button class="profileMenuBtn sign-out-btn">Sign out</button></a>
+				</div>
 		</div>
 
-		<button id="searchBtn" class="btnInstance">Search</button>	
-		<button id="menuBtn" class="btnInstance">Menu</button>
+		<!-- menu buttons -->
+		<div id="searchBtn" class="btnInstance"><div class="circle"><img src="img/search-icon.png"></div></div>	
+		<div id="menuBtn" class="btnInstance"><div class="circle"><img src="img/profile-icon.png"></div></div>
 
 				
 		<form action="{{ URL::route('home-map-ajax') }}" method="get">
@@ -54,6 +65,7 @@
 		{{ HTML::script('js/home-map.js') }}
 		{{ HTML::script('js/menu-panel-slide.js') }}
 		{{ HTML::script('js/search/search-panel-slide.js') }}
+		{{ HTML::script('js/search/searchtags.js') }}
 		
 	</body>
 </html>

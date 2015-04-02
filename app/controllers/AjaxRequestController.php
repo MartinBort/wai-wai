@@ -3,23 +3,30 @@ class AjaxRequestController extends BaseController {
 
 	public function searchTags() {
 
-		$searchTerm = Input::get('search-term');
+		$searchTerm = Input::get('query');
 
-		$data = DB::table('spots')
-			->join('tags', 'spots.spot_id', '=', 'tags.spot_id')
-			->select('spots.spot_id', 'spots.spot_name', 'spots.latitude', 'spots.longitude', 'tags.tag_name')
-			->where('tags.tag_name', 'LIKE', '%'. $searchTerm .'%')
-			->get();
-		
+		//$data = Tag::distinct()->select('tags')->where('tag_name', 'LIKE', $searchTerm.'%')->groupBy('tag_name')->get();
+
 		if(Request::ajax()){ //on keyup
 
-		    return json_encode($data);  //turn the result value to JSON so it can be handled in JQuery
+			$data = DB::table('spots')
+				->join('tags', 'spots.spot_id', '=', 'tags.spot_id')
+				->select('spots.spot_id', 'spots.spot_name', 'spots.latitude', 'spots.longitude', 'tags.tag_name')
+				->where('tags.tag_name', 'LIKE', $searchTerm.'%')
+				->get();
+
+		    return json_encode($data);  //turn the result value to JSON so it can be parsed and handled in JavaScript
 		
-		} else { //user hits submit
+		} else { //if user hits submit
+
+			$data = DB::table('spots')
+				->join('tags', 'spots.spot_id', '=', 'tags.spot_id')
+				->select('spots.spot_id', 'spots.spot_name', 'spots.latitude', 'spots.longitude', 'tags.tag_name')
+				->where('tags.tag_name', 'LIKE', $searchTerm.'%')
+				->get();
 
 			return View::make('search.tags')->with('data', $data);
-		}
-		
+		}		
 	}
 
 }

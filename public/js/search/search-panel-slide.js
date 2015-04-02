@@ -13,6 +13,9 @@ $(document).ready(function() {
 	/*close menu panel*/
 	$('#closeSearchPanel').click(function(){
 		$('#searchPanel').slideUp('fast');
+		//empty any input text
+		$('#searchBox').val('');
+		$('#searchResults').empty();
 	});
 
 });

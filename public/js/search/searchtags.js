@@ -1,29 +1,32 @@
-//search on keyup
-$("input#omnibox").on('keyup', function(){
+//live search on keyup
+$('input#searchBox').on('keyup', function(){
 
 	//set search string
-	var search_string = $(this).val();
+	var search_query = $('#searchBox').val();
 
-	//console.log(search_string);
+	if(search_query !== ''){		
 
-	//post search
-	if(search_string !==''){
 		$.ajax({
 			type: 'GET',
 			url: 'http://localhost/shimiya/public/search',
-			data: search_string,
+			data: {query: search_query},
 			success: function(data){
 
-				//do something
-				console.log(data);
+				data = $.parseJSON(data); //turn string to JSON
 
-				$('#search-results').text(data);
+				$('#searchResults').empty(); //empty target div before appending
+
+				//loop through each result
+				$.each(data, function(spots,spot) {
+					returnTag = '<h2 class="tagInstance">'+spot.tag_name+'</h2>'
+					$('#searchResults').append(returnTag);
+				}); 
 				
-			}
-		});
+			} //end success
+		});//end ajax
 
-	} else {
-		$('#search-results').text('');
-	}
-	
-});
+	} else { $('#searchResults').empty(); };
+
+}); //end onkeyup
+
+

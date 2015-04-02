@@ -1,3 +1,7 @@
+* { box-sizing: border-box; } /* width given includes padding and border */
+
+/* google font  */
+p, a, button { font-family: 'Open Sans', sans-serif; }
 
 /* Full-screen map canvas */
 #map-canvas {
@@ -9,20 +13,36 @@
 
 .btnInstance {
 	position: absolute;
-	height: 4em;
-	width: 4em;
+	padding-right: 5px;
+	height: 3em;
+	width: 3em;
 	z-index: 1;
-	background: rgba(52, 73, 94, 0.8);
+	/* circle */
+}
+
+/*circle shadow*/
+.circle {
+ 	width: 2.6em;
+   	height: 2.6em;
+   	-moz-border-radius: 70px; 
+   	-webkit-border-radius: 70px; 
+   	border-radius: 70px;
+   	/* shadow */
+   	-webkit-box-shadow: 4px 9px 5px 0px rgba(50, 50, 50, 0.65);
+	-moz-box-shadow:    4px 9px 5px 0px rgba(50, 50, 50, 0.65);
+	box-shadow:         4px 9px 5px 0px rgba(50, 50, 50, 0.65);
 }
 
 #menuBtn {
 	bottom: 0;
 	right: 0;
+	padding-bottom: 8px;
 }
 
 #searchBtn {
 	top: 0;
 	right: 0;
+	padding-top: 5px;
 }
 
 #mapMask {
@@ -41,13 +61,50 @@
 	right: 0;
 	z-index: 3;
 	margin-right: -80%;
-	background: red;
+	background: #F5F5F5;
+	/* background: #373737;*/
+	/*background: rgba(55, 55, 55, 0.8)*/
 }
 
 #closeMenuPanel {
 	position: absolute;
+	top: 3px;
 	right: 0;
 	height: 3em;
+}
+
+.profileMenuBtn {
+	width: 100%;
+	height: 80px;
+	margin: 2px auto;
+	border: 2px solid #363636;
+	background: #F5F5F5; 
+	color: #363636;
+	font-size: 150%;
+}
+
+.sign-out-btn {
+	color: red;
+	border: 2px solid red;
+}
+
+.sign-out-btn a:link {
+	color: red;
+}
+
+.sign-out-btn a:visited {
+	color: red;
+}
+
+/* remove link styling */
+a { text-decoration: none; }
+a:visited, a:link {	color: #363636; }
+
+.profileMenuBtnWrapper{
+	position: relative;
+	width: 100%;
+	top: 60px;
+	padding: 5px;
 }
 
 
