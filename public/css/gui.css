@@ -1,0 +1,38 @@
+/*  buttons */
+
+.btn {
+	width: 100%;
+	height: 80px;
+	margin: 2px auto;
+	background: #FFF; 
+	font-size: 150%;
+}
+
+.black-btn {
+	border: 2px solid #363636;
+	color: #363636;
+}
+
+.yellow-btn {
+	border: 2px solid #F0B011;
+	color: #F0B011;
+}
+
+.blue-btn {
+	border: 2px solid #1881BD;
+	color: #1881BD;
+}
+
+.login-btn {
+	position: relative;
+	float: right;
+	top: 5px;
+	right: 10px;
+	height: 65px;
+	width: 120px;
+	margin: 2px auto;
+	border: 2px solid #1881BD;
+	background: rgba(255, 255, 255, 0.4);
+	color: #1881BD;
+	font-size: 150%;
+}

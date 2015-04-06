@@ -13,8 +13,11 @@
 		{{ HTML::style('css/search-panel.css') }}
 	</head>
 	<body>
-		
+
 		<div id="map-canvas"></div>
+
+		<div id="centreMarker"></div>
+
 		<div id="mapMask"></div> <!-- covers map-canvas when menu is toggled -->
 
 		<!-- search panel -->
@@ -51,15 +54,13 @@
 		<div id="searchBtn" class="btnInstance"><div class="circle"><img src="img/search-icon.png"></div></div>	
 		<div id="menuBtn" class="btnInstance"><div class="circle"><img src="img/profile-icon.png"></div></div>
 
-				
+		<!--	from when map loaded with closest points - depracted
 		<form action="{{ URL::route('home-map-ajax') }}" method="get">
 			<input type="hidden" id="lat" value="" name="lat">
 			<input type="hidden" id="lng" value="" name="lng">
 			{{ Form::token() }}
 		</form>
-
-
-
+		-->
 
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}
 		{{ HTML::script('js/home-map.js') }}

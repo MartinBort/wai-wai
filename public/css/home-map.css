@@ -11,16 +11,32 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	bottom: 0;
 }
 
+/* map marker */
+#centreMarker {
+	position:absolute;
+	background:url(../img/tag-spot2.png) no-repeat;
+	/*center the marker*/
+	top:50%;
+	left:50%;
+	z-index:2;
+	/*fix marker offset*/
+	margin-left:-112px;
+	margin-top:-55px;
+	/*size of the image*/
+	height:64px;
+	width:220px;
+	cursor:pointer;
+}
+
 .btnInstance {
 	position: absolute;
 	padding-right: 5px;
 	height: 3em;
 	width: 3em;
 	z-index: 1;
-	/* circle */
 }
 
-/*circle shadow*/
+/*circle shadow for btn icons*/
 .circle {
  	width: 2.6em;
    	height: 2.6em;
@@ -36,13 +52,15 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 #menuBtn {
 	bottom: 0;
 	right: 0;
-	padding-bottom: 8px;
+	margin-bottom: 10px;
+	margin-right: 10px;
 }
 
 #searchBtn {
 	top: 0;
 	right: 0;
-	padding-top: 5px;
+	margin-top: 10px;
+	margin-right: 10px;
 }
 
 #mapMask {

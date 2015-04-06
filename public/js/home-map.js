@@ -1,4 +1,7 @@
+//declare global variables so accessible from inside functions
 var map;
+var lat;
+var lng;
 
 function initialize() {
 
@@ -12,30 +15,34 @@ function initialize() {
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
+
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
 
+      //get latitude and longitude
+      lat = position.coords.latitude.toFixed(5); //configure latlng to 5 decimal precision
+      lng = position.coords.longitude.toFixed(5);
 
-      //create spot marker to DOM
-      var image = 'img/tag-spot2.png'; //custom marker image 
-      var marker = new google.maps.Marker({
-          position: pos,
-          title:"Tag a new spot!",
-          icon: image
-      });
+      var pos = new google.maps.LatLng(lat,lng);
 
-      
-      marker.setMap(map); // To add the marker to the map
+      //centre map to lat, lng
       map.setCenter(pos);
 
+      /*---
+      MARKER ANIMATION + LAT LANG CHANGE ON DRAG
+      ---*/
+      //on map drag, change centre icon
+      google.maps.event.addListener(map, 'drag', function() {
+        moveMarker = document.getElementById("centreMarker");
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot-moved.png')"; 
+      });
 
-      //click event - creating new spot
-      google.maps.event.addListener(marker, 'click', function() {
-        
-        //navigate to
-        window.location.href = 'http://localhost/shimiya/public/tag/current-location';
-
+      //change back on drag end
+      google.maps.event.addListener(map, 'dragend', function(event) {
+        moveMarker = document.getElementById("centreMarker");
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot2.png')"; 
+        //get lat lng from centre of map
+        lat = map.getCenter().lat().toFixed(5);
+        lng = map.getCenter().lng().toFixed(5);
       });
 
 
@@ -49,7 +56,22 @@ function initialize() {
 }
 
 
+/*---
+TAG NEW SPOT
+---*/
+$('#centreMarker').click(function(){
 
+  //Create new form with lat lng, subtmit it
+  $('<form action="http://localhost/shimiya/public/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
+    .appendTo('body')
+    .submit();
+  });
+
+
+
+/*---
+ERROR CASE FOR GEOLOCATION
+---*/
 function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
     var content = 'Error: The Geolocation service failed.';

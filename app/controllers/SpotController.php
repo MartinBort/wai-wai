@@ -2,7 +2,19 @@
 class SpotController extends BaseController {
 
 	public function tagCurrentLocation() { //should be 'getCreateSpot()'
-		return View::make('spots.new-spot-current-location');
+
+		//get lat lng from home-map
+		$lat = Input::get('lat');
+		$lng = Input::get('lng');
+
+		//create array with position
+		$position = array(
+			'lat' => $lat,
+			'lng' => $lng
+			);
+
+		//create view and pass position data
+		return View::make('spots.new-spot-current-location')->with($position);
 	}
 
 	public function postCreateSpot() {		

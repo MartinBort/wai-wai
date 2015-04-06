@@ -5,18 +5,24 @@
 		<!-- Prevent iphone browsers from zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<!-- normalize.css for resetting css across all browsers -->
+		{{ HTML::style('css/normalize.min.css') }}
+		{{ HTML::style('css/tag-spot.css') }}
 	</head>
 	<body>
 
 		<!--{{ Auth::user()->username }}-->
-		<a href="{{ URL::route('home') }}">X</a>
-		
-		<div id="map-canvas" style="height:200px;width:300px;"></div>
+		<div id="top-bar">
+			<a href="{{ URL::route('home') }}">&#60;Return to map</a>
+		</div>
+
+		<div id="map-canvas"></div>
 		<form action="{{ URL::route('create-spot') }}" method="post">
 
 			<input type="hidden" id="user_id" name="user_id" value="{{ Auth::user()->id }}">
-			<input type="hidden" id="lat" value="" name="lat">
-			<input type="hidden" id="lng" value="" name="lng">
+
+			<input type="hidden" id="lat" value=<?php echo '"'+$lat+'"' ?> name="lat">
+			<input type="hidden" id="lng" value=<?php echo '"'+$lng+'"' ?> name="lng">
 
 			<p>Name the Spot: <input type="text" name="spot_name" {{ (Input::old('spot_name')) ? ' value="' . e(Input::old('spot_name')) .'" ' : ' ' }}></p>
 			<span style="color:red">
@@ -46,8 +52,8 @@
 		<button id="showArr">Click</button>
 		-->
 
-		{{ HTML::script('js/tag-current-location.js') }}
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}
+		{{ HTML::script('js/tag-current-location.js') }}
 		{{ HTML::script('js/add-tags.js') }}
 
 	</body>
