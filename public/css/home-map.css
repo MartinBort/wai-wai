@@ -28,6 +28,7 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	cursor:pointer;
 }
 
+/* instance of main btn icons on home map*/
 .btnInstance {
 	position: absolute;
 	padding-right: 5px;
@@ -49,6 +50,8 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	box-shadow:         4px 9px 5px 0px rgba(50, 50, 50, 0.65);
 }
 
+
+/* individual styling for main btn icons */
 #menuBtn {
 	bottom: 0;
 	right: 0;
@@ -63,6 +66,14 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	margin-right: 10px;
 }
 
+#centerBtn {
+	bottom: 0;
+	left: 0;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/* opacity mask appears when menu is active */
 #mapMask {
 	position: absolute;
 	width: 100%;
@@ -84,6 +95,7 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	/*background: rgba(55, 55, 55, 0.8)*/
 }
 
+/* exit menu btn */
 #closeMenuPanel {
 	position: absolute;
 	top: 3px;
@@ -91,6 +103,7 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	height: 3em;
 }
 
+/* buttons within the user profile menu */
 .profileMenuBtn {
 	width: 100%;
 	height: 80px;
@@ -125,4 +138,38 @@ a:visited, a:link {	color: #363636; }
 	padding: 5px;
 }
 
+/* search by... buttons */
+.searchby-btn {
+	position: relative;
+	background: rgb(245, 245, 245); /* browser fallback */
+	background: rgba(245, 245, 245, 0.0); 
+	height: 80px;
+	width: 50%;
+	margin: 2px auto;
+	display: inline-block;
+	font-size: 150%;
+	float: left;
+}
+
+.searchby-active {
+	/*background: rgba(24, 129, 189, 0.0);*/
+	border: 2px solid #1881BD;
+	color: #1881BD;
+	/* transition */
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.searchby-off {
+	/*background: rgba(186, 186, 186, 0.0);*/
+	border: 2px solid #BABABA;
+	color: #BABABA;
+	/* transition */
+	-moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
 

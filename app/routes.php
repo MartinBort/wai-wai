@@ -11,11 +11,6 @@ Route::get('/user/{username}', array(
 	'uses' => 'ProfileController@user'
 ));
 
-//AJAX search
-Route::get('/search', array(
-	'as'	=> 'search-tags',
-	'uses'	=> 'AjaxRequestController@searchTags'
-));
 
 /*=========================*/
 //	authenticated group    //
@@ -45,13 +40,25 @@ Route::group(array('before' => 'auth'), function() {
 
 	});
 
+	//tags search
+	Route::get('/search', array(
+		'as'	=> 'search-tags',
+		'uses'	=> 'SearchController@searchTags'
+	));
+
+	//search near me
+	Route::get('/near-me', array(
+		'as'	=> 'search-near-me',
+		'uses'	=> 'SearchController@searchNearMe'
+	));
+
 	//main map AJAX REQUEST
 		Route::get('/location/ajax', array(
 			'as' => 'home-map-ajax',
 			'uses' => 'HomeController@ajaxHomeMap'
 		));
 
-	//main map (GET)
+	//main map (GET) /*not used?*/
 	Route::get('/location/home', array(
 		'as' => 'home-map',
 		'uses' => 'HomeController@getHomeMap'

@@ -5,8 +5,6 @@ class AjaxRequestController extends BaseController {
 
 		$searchTerm = Input::get('query');
 
-		//$data = Tag::distinct()->select('tags')->where('tag_name', 'LIKE', $searchTerm.'%')->groupBy('tag_name')->get();
-
 		if(Request::ajax()){ //on keyup
 
 			$data = DB::table('spots')
@@ -26,7 +24,15 @@ class AjaxRequestController extends BaseController {
 				->get();
 
 			return View::make('search.tags')->with('data', $data);
-		}		
+		}
+	}
+
+	public function searchSpots() {
+
+		$searchTerm = Input::get('query');
+
+		
+
 	}
 
 }

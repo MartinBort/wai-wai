@@ -16,7 +16,7 @@ class HomeController extends BaseController {
 		
 	}
 
-	public function getHomeMap()
+	public function getHomeMap() /*not used?*/
 	{
 		return View::make('home-map');		
 	}

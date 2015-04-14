@@ -33,13 +33,13 @@ function initialize() {
       //on map drag, change centre icon
       google.maps.event.addListener(map, 'drag', function() {
         moveMarker = document.getElementById("centreMarker");
-        moveMarker.style.backgroundImage = "url('../public/img/tag-spot-moved.png')"; 
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot-moved.png')"; //http://waiwai.space/img/tag-spot-moved.png
       });
 
       //change back on drag end
       google.maps.event.addListener(map, 'dragend', function(event) {
         moveMarker = document.getElementById("centreMarker");
-        moveMarker.style.backgroundImage = "url('../public/img/tag-spot2.png')"; 
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot2.png')"; //http://waiwai.space/img/tag-spot2.png
         //get lat lng from centre of map
         lat = map.getCenter().lat().toFixed(5);
         lng = map.getCenter().lng().toFixed(5);
@@ -61,11 +61,29 @@ TAG NEW SPOT
 ---*/
 $('#centreMarker').click(function(){
 
-  //Create new form with lat lng, subtmit it
+  //Create new form with lat lng, submit it  [http://waiwai.space/tag/current-location]
   $('<form action="http://localhost/shimiya/public/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
     .appendTo('body')
     .submit();
   });
+
+
+/*---
+SEARCH NEAR ME 
+---*/
+/*
+$('').click(function(){
+
+  //close menu panel
+
+  //Create new form with lat lng, submit it
+  $('<form action="http://localhost/shimiya/public/near-me"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
+    .appendTo('body')
+    .submit();
+  });
+
+});
+*/
 
 
 

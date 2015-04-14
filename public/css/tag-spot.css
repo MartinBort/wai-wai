@@ -1,10 +1,15 @@
+* { box-sizing: border-box; } /* width given includes padding and border */
+
 #top-bar {
 	position: absolute;
 	width: 100%;
 	height: 150px;
 	color: #FFF;
 	z-index: 2;
+	font-size: 120%;
+	padding-top: 5px;
 
+	/* gradient */
 	background: -moz-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(20,20,20,1) 2%, rgba(76,76,76,0.01) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(19,19,19,1)), color-stop(2%,rgba(20,20,20,1)), color-stop(100%,rgba(76,76,76,0.01))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* Chrome10+,Safari5.1+ */
@@ -14,24 +19,60 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#034c4c4c',GradientType=0 ); /* IE6-9 */
 	copy
 
-
-
-
 }
 
-.row {
-	position: relative;
-	width: 100%;
-	height: 50px;
+#top-bar img {
+	vertical-align: middle;
 }
 
 #map-canvas {
 	position: relative;
 	width: 100%;
-	height: 250px;
+	height: 200px;
 }
-
 
 /* remove link styling */
 a { text-decoration: none; }
 a:visited, a:link {	color: #FFF; }
+
+#spot-name-input {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	padding-left: 10px;
+	/* borders */
+	border-top: 1px solid #BABABA;
+	border-bottom: 1px solid #BABABA;
+	border-left: none;
+	border-right: none;
+	/* remove ios curves */
+	-webkit-appearance: none;
+    -webkit-border-radius:0; 
+    border-radius:0;
+}
+
+#input-tags-box {
+	position: relative;
+	width: 100%;
+}
+
+#input-tag {
+	position: relative;
+	width: 100%;
+	height: 40px;
+}
+
+/* add tag button */
+#addtag {
+
+}
+
+#comments-area {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 10px;
+	outline: none;
+	resize: none;
+	word-wrap: break-word;
+}

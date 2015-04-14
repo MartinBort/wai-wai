@@ -23,19 +23,20 @@
 		<!-- search panel -->
 		<div id="searchPanel">
 			<div class="row">
-				<div id="closeSearchPanel"><img src="img/x-btn-white.png"></div>
+				<button>What's near me?</button>
+				<img id="closeSearchPanel" src="img/x-btn-grey.png">
 			</div>
-			<div class="row">
+			<div>
 				<form action="{{ URL::route('search-tags') }}" method="GET">
-					<input type="search" id="searchBox" placeholder="search for tags...">
+					<input type="search" id="searchBox" name="query" placeholder="Search for tags...">
 				</form>				
 			</div>
-			<!-- search toggle
-			<div class="row">
-				 
-				<button>Spots</button><button>Tags</button>
-			</div>
-			-->
+			
+			<!-- seach by... buttons -->		 
+			<button id="searchbyTags" class="searchby-btn searchby-active">Tags</button>
+			<button id="searchbySpots"class="searchby-btn searchby-off">Spots</button>
+			
+			
 			<div id="searchResults"></div>
 		</div>
 
@@ -53,6 +54,7 @@
 		<!-- menu buttons -->
 		<div id="searchBtn" class="btnInstance"><div class="circle"><img src="img/search-icon.png"></div></div>	
 		<div id="menuBtn" class="btnInstance"><div class="circle"><img src="img/profile-icon.png"></div></div>
+		<div id="centerBtn" class="btnInstance"><div class="circle"><img src="img/center-icon.png"></div></div>
 
 		<!--	from when map loaded with closest points - depracted
 		<form action="{{ URL::route('home-map-ajax') }}" method="get">

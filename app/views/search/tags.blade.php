@@ -1,4 +1,4 @@
-<div id="map-canvas" style="height:500px;width:100%;"></div>
+<div id="map-canvas" style="height:200px;width:100%;"></div>
 
 <form id="results">	
 
