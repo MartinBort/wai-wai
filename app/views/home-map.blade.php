@@ -27,8 +27,9 @@
 				<img id="closeSearchPanel" src="img/x-btn-grey.png">
 			</div>
 			<div>
-				<form action="{{ URL::route('search-tags') }}" method="GET">
+				<form id="searchbyForm" action="{{ URL::route('search-tags') }}" method="GET">
 					<input type="search" id="searchBox" name="query" placeholder="Search for tags...">
+
 				</form>				
 			</div>
 			

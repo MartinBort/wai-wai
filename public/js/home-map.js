@@ -105,6 +105,11 @@ function handleNoGeolocation(errorFlag) {
 
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
+
+  //display error message
+  $('#mapMask').css("z-index", 2);
+  $('<p id="locationErrorMessage">Please switch on Location Services in your device settings, and refresh the page</p>').appendTo('#mapMask');
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

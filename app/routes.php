@@ -40,10 +40,16 @@ Route::group(array('before' => 'auth'), function() {
 
 	});
 
-	//tags search
-	Route::get('/search', array(
+	//search by tags
+	Route::get('/search/tags', array(
 		'as'	=> 'search-tags',
 		'uses'	=> 'SearchController@searchTags'
+	));
+
+	//search by spots
+	Route::get('/search/spots', array(
+		'as'	=> 'search-spots',
+		'uses'	=> 'SearchController@searchSpots'
 	));
 
 	//search near me

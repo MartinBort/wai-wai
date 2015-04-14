@@ -138,38 +138,3 @@ a:visited, a:link {	color: #363636; }
 	padding: 5px;
 }
 
-/* search by... buttons */
-.searchby-btn {
-	position: relative;
-	background: rgb(245, 245, 245); /* browser fallback */
-	background: rgba(245, 245, 245, 0.0); 
-	height: 80px;
-	width: 50%;
-	margin: 2px auto;
-	display: inline-block;
-	font-size: 150%;
-	float: left;
-}
-
-.searchby-active {
-	/*background: rgba(24, 129, 189, 0.0);*/
-	border: 2px solid #1881BD;
-	color: #1881BD;
-	/* transition */
-	-moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-}
-
-.searchby-off {
-	/*background: rgba(186, 186, 186, 0.0);*/
-	border: 2px solid #BABABA;
-	color: #BABABA;
-	/* transition */
-	-moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-}
-
