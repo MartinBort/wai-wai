@@ -11,19 +11,21 @@
 		{{ HTML::style('css/normalize.min.css') }}
 		{{ HTML::style('css/home-map.css') }}
 		{{ HTML::style('css/search-panel.css') }}
+		{{ HTML::style('css/gui.css') }}
 	</head>
 	<body>
 
 		<div id="map-canvas"></div>
 
 		<div id="centreMarker"></div>
+		<button id="revealTagIcon" class="btn blue-btn">Tag a spot</button>
 
 		<div id="mapMask"></div> <!-- covers map-canvas when menu is toggled -->
 
 		<!-- search panel -->
 		<div id="searchPanel">
 			<div class="row">
-				<button>What's near me?</button>
+				<button id="nearMeBtn">What's near me?</button>
 				<img id="closeSearchPanel" src="img/x-btn-grey.png">
 			</div>
 			<div>
@@ -64,12 +66,15 @@
 			{{ Form::token() }}
 		</form>
 		-->
+		<input type="hidden" id="lat" value="" name="lat">
+		<input type="hidden" id="lng" value="" name="lng">
 
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}
 		{{ HTML::script('js/home-map.js') }}
 		{{ HTML::script('js/menu-panel-slide.js') }}
 		{{ HTML::script('js/search/search-panel-slide.js') }}
-		{{ HTML::script('js/search/searchtags.js') }}
+		{{ HTML::script('js/search/search-tags-spots.js') }}
+		{{ HTML::script('js/search/near-me.js') }}
 		
 	</body>
 </html>

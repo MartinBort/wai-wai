@@ -28,6 +28,19 @@ p, a, button { font-family: 'Open Sans', sans-serif; }
 	cursor:pointer;
 }
 
+#revealTagIcon {  /* button to reveal centre marker after nerbysearch hides it*/
+	position: relative;
+	z-index: 3;
+	width: 150px;
+	height: 45px;
+	font-size: 100%;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-left: 5px;
+	background: rgba(255, 255, 255, 0.6);
+	display: none;
+}
+
 /* instance of main btn icons on home map*/
 .btnInstance {
 	position: absolute;

@@ -22,10 +22,15 @@ function initialize() {
       lat = position.coords.latitude.toFixed(5); //configure latlng to 5 decimal precision
       lng = position.coords.longitude.toFixed(5);
 
+      //place lat+lng values onto html document so it can be accessed by other external JS scripts
+      $('#lat').val(lat);
+      $('#lng').val(lng);
+
       var pos = new google.maps.LatLng(lat,lng);
 
       //centre map to lat, lng
       map.setCenter(pos);
+
 
       /*---
       MARKER ANIMATION + LAT LANG CHANGE ON DRAG
@@ -33,13 +38,15 @@ function initialize() {
       //on map drag, change centre icon
       google.maps.event.addListener(map, 'drag', function() {
         moveMarker = document.getElementById("centreMarker");
-        moveMarker.style.backgroundImage = "url('../public/img/tag-spot-moved.png')"; //http://waiwai.space/img/tag-spot-moved.png
+        //moveMarker.style.backgroundImage = "url('http://waiwai.space/img/tag-spot-moved.png')";
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot-moved.png')";
       });
 
       //change back on drag end
       google.maps.event.addListener(map, 'dragend', function(event) {
         moveMarker = document.getElementById("centreMarker");
-        moveMarker.style.backgroundImage = "url('../public/img/tag-spot2.png')"; //http://waiwai.space/img/tag-spot2.png
+        //moveMarker.style.backgroundImage = "url('http://waiwai.space/img/tag-spot2.png')";
+        moveMarker.style.backgroundImage = "url('../public/img/tag-spot2.png')";
         //get lat lng from centre of map
         lat = map.getCenter().lat().toFixed(5);
         lng = map.getCenter().lng().toFixed(5);
@@ -53,7 +60,8 @@ function initialize() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
-}
+} //end initialize
+
 
 
 /*---
@@ -62,28 +70,12 @@ TAG NEW SPOT
 $('#centreMarker').click(function(){
 
   //Create new form with lat lng, submit it  [http://waiwai.space/tag/current-location]
+  //$('<form action="http://waiwai.space/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
   $('<form action="http://localhost/shimiya/public/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
     .appendTo('body')
     .submit();
   });
 
-
-/*---
-SEARCH NEAR ME 
----*/
-/*
-$('').click(function(){
-
-  //close menu panel
-
-  //Create new form with lat lng, submit it
-  $('<form action="http://localhost/shimiya/public/near-me"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
-    .appendTo('body')
-    .submit();
-  });
-
-});
-*/
 
 
 
