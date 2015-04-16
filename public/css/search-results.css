@@ -88,3 +88,9 @@ a:visited, a:link {	color: #FFF; }
 	color: #FFF;
 	border: 2px solid #FFF;	
 }
+
+.maplink a {
+	color: #545454;
+	font-style: italic;
+	text-decoration: underline;
+}

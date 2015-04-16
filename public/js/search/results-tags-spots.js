@@ -59,7 +59,7 @@ function placeMarkers(){
 
     //make info window with link to spot
 							var infowindow = new google.maps.InfoWindow({
-							      content: '<h2><a href='+spot_url+'>'+spotTitle+'</a></h2>'
+							      content: '<h2 class="maplink"><a href='+spot_url+'>'+spotTitle+'</a></h2>'
 							});		
 
     var spotLatLng = new google.maps.LatLng(lat,lng);
