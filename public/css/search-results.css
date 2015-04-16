@@ -1,0 +1,90 @@
+* { box-sizing: border-box; } /* width given includes padding and border */
+
+/* google font  */
+p, a, button { font-family: 'Open Sans', sans-serif; }
+
+/* remove link styling */
+a { text-decoration: none; }
+a:visited, a:link {	color: #FFF; }
+
+#top-bar {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	color: #FFF;
+	z-index: 2;
+	font-size: 120%;
+	padding-top: 5px;
+
+	/* gradient */
+	background: -moz-linear-gradient(top, rgba(19,19,19,1) 0%, rgba(20,20,20,1) 2%, rgba(76,76,76,0.01) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(19,19,19,1)), color-stop(2%,rgba(20,20,20,1)), color-stop(100%,rgba(76,76,76,0.01))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#034c4c4c',GradientType=0 ); /* IE6-9 */
+	copy
+
+}
+
+#map-canvas {
+	width: 100%;
+	height: 300px;
+}
+
+#map-wrapper {
+	position: fixed;
+	width: 100%;	
+	height: 300px;
+	top: 0;
+	z-index: 999;
+}
+
+#results-box {
+	position: relative;
+	top: 300px;
+}
+
+.result {
+	height: 80px;
+	padding-top: 5px;
+	padding-left: 10px;
+	border-top: 1px solid #D3D3D3;
+	color: #545454;
+}
+
+.result:last-of-type {
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.result h2 {
+	margin: 0;
+	padding-bottom: 5px;
+}
+
+.active-result {
+	color: white;
+	/* background gradient */
+	background: rgb(240,176,17); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(240,176,17,1) 0%, rgba(245,199,45,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,176,17,1)), color-stop(100%,rgba(245,199,45,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(240,176,17,1) 0%,rgba(245,199,45,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(240,176,17,1) 0%,rgba(245,199,45,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(240,176,17,1) 0%,rgba(245,199,45,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(240,176,17,1) 0%,rgba(245,199,45,1) 100%); /* W3C */
+
+}
+
+.view-spot-btn {
+	position: relative;
+	top: -35px;
+	right: 10px;
+	float: right;
+	width: 100px;
+	height: 70px;
+	margin: 2px auto;
+	background: rgba(255, 255, 255, 0.1); 
+	color: #FFF;
+	border: 2px solid #FFF;	
+}
