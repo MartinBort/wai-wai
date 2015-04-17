@@ -9,9 +9,9 @@
 		<!-- Google maps API -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		{{ HTML::style('css/normalize.min.css') }}
+		{{ HTML::style('css/gui.css') }}
 		{{ HTML::style('css/home-map.css') }}
 		{{ HTML::style('css/search-panel.css') }}
-		{{ HTML::style('css/gui.css') }}
 	</head>
 	<body>
 
