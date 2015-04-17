@@ -36,6 +36,7 @@ class SpotController extends BaseController {
 			//create spot
 			$spot = new Spot;
 	        $spot->user_id 			= Input::get('user_id');
+	        $spot->user_name		= Auth::user()->username;
 	        $spot->latitude 		= Input::get('lat');
 	        $spot->longitude 		= Input::get('lng');
 	        $spot->spot_name		= Input::get('spot_name');
@@ -62,14 +63,19 @@ class SpotController extends BaseController {
 	}
 
 	public function getViewSpot($spot_id) {
+
 		$spot = Spot::where('spot_id', '=', $spot_id); //query
 
 		if($spot->count()) { //if exist in DB
 			$spot = $spot->first(); //first record returned from query
 
+			//find tags related to post, push to spot object
+			$spot->tags;
+
 			return View::make('spots.view-spot')
 				->with('spot', $spot);
 			}
+			
 	}
 
 	public function getEditSpot($spot_id) {

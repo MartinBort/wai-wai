@@ -4,6 +4,7 @@
 		<title>Tag a Spot!</title>
 		<!-- Prevent iphone browsers from zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- gmaps -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<!-- normalize.css for resetting css across all browsers -->
 		{{ HTML::style('css/normalize.min.css') }}
@@ -24,7 +25,7 @@
 			<input type="hidden" id="lat" value=<?php echo '"'+$lat+'"' ?> name="lat">
 			<input type="hidden" id="lng" value=<?php echo '"'+$lng+'"' ?> name="lng">
 
-			<p>Spot title</p>
+			<p>Spot title: </p>
 			<input type="text" placeholder="Name the spot" id="spot-name-input" name="spot_name" {{ (Input::old('spot_name')) ? ' value="' . e(Input::old('spot_name')) .'" ' : ' ' }}>
 			<span style="color:red">
 				@if($errors->has('spot_name'))
@@ -36,7 +37,7 @@
 			
 	
 			<p>Add tags</p>
-			<input type="text" id="input-tag"><button onClick="return false;" id="addtag">+</button>
+			<input type="text" placeholder="eg. 'cafe', 'gallery'" id="input-tag"><button onClick="return false;" id="addtag">+</button>
 
 			
 

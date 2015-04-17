@@ -1,9 +1,16 @@
 * { box-sizing: border-box; } /* width given includes padding and border */
 
+/* google font  */
+h1, h2, h3, p, a, button { font-family: 'Open Sans', sans-serif; }
+
+body {
+	background: #F5F5F5;
+}
+
 #top-bar {
 	position: absolute;
 	width: 100%;
-	height: 150px;
+	height: 60px;
 	color: #FFF;
 	z-index: 2;
 	font-size: 120%;
@@ -18,7 +25,6 @@
 	background: linear-gradient(to bottom, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#034c4c4c',GradientType=0 ); /* IE6-9 */
 	copy
-
 }
 
 #top-bar img {
@@ -54,17 +60,57 @@ a:visited, a:link {	color: #FFF; }
 #input-tags-box {
 	position: relative;
 	width: 100%;
+	/* borders */
+	border-top: 1px solid #BABABA;
+	border-bottom: 1px solid #BABABA;
+	border-left: none;
+	border-right: none;
 }
 
 #input-tag {
 	position: relative;
 	width: 100%;
 	height: 40px;
+	/* borders */
+	border-top: 1px solid #BABABA;
+	border-bottom: 1px solid #BABABA;
+	border-left: none;
+	border-right: none;
 }
 
 /* add tag button */
 #addtag {
+	position: relative;
+	height: 40px;
+	width: 50px;
+	top: -42px;
+	float: right;
+	margin: 2px auto;
+	background: rgba(181, 181, 181, 0.1); 
+	font-size: 150%;
+	outline: none;
+	border: 2px solid #F0B011;
+	color: #F0B011;
+}
 
+/* the tags */
+.displaytag {
+	display: inline-block;
+	padding: 8px;
+	color: #2980b9;
+	background-color: #FFE26B;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.displaytag button {
+	position: relative;
+	height: 40px;
+	width: 50px;
+	background: rgba(181, 181, 181, 0.1); 
+	border: none;
+	color: #e74c3c;
 }
 
 #comments-area {

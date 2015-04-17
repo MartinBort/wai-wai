@@ -13,13 +13,6 @@ body {
 	height: 200px;
 }
 
-#comments {
-	position: relative;
-	width: 100%;
-	background: #F5F5F5;
-	padding: 10px;
-}
-
 #top-bar {
 	position: absolute;
 	width: 100%;
@@ -38,10 +31,58 @@ body {
 	background: linear-gradient(to bottom, rgba(19,19,19,1) 0%,rgba(20,20,20,1) 2%,rgba(76,76,76,0.01) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#034c4c4c',GradientType=0 ); /* IE6-9 */
 	copy
-
 }
 
 #heart {
 	position: relative;
 	float: right;
+}
+
+#content-wrapper {
+	padding-left: 10px;
+}
+
+#spot-title {
+	position: relative;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 5px;
+	padding-left: 10px;
+	border-bottom: 1px solid #34495e;
+	background-color: #ecf0f1;
+	color: #34495e;
+}
+
+#tagged-by { margin-top: 0px; }
+
+#tagged-by > i {
+	font-size: 120%;
+	color: #226794;
+}
+
+
+.tag {
+	display: inline-block;
+	padding: 8px;
+	color: #2980b9;
+	background-color: #FFE26B;
+	margin-top: 10px;
+}
+
+#notes {
+	position: relative;
+	width: 100%;
+	background: #F5F5F5;
+}
+
+#notes h3 {
+	margin-bottom: 0;
+}
+
+#notes p {
+	margin-top: 5;
+}
+
+#directions-btn {
+
 }
