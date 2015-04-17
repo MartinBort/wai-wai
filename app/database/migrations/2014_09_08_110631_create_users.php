@@ -15,7 +15,7 @@ class CreateUsers extends Migration {
 	        $table->string('password', 60);
 	        $table->string('password_temp', 60);
 	        $table->string('code');
-	        $table->string('remember_token', 100)->nullable()
+	        $table->string('remember_token', 100)->nullable();
 	        $table->integer('active');
 	        $table->timestamps();
 	       

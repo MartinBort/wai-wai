@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>View Spot</title>
+		<title>Wai Wai</title>
+		{{ HTML::style('css/normalize.min.css') }}
+		{{ HTML::style('css/view-spot.css') }}
+		{{ HTML::style('css/gui.css') }}
+
 		
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 	</head>
 	<body>
-		<h1><i>{{$spot->spot_name}}</i></h1>
 		
-		<div id="map-canvas" style="height:200px;width:300px;"></div>
+		<div id="top-bar">
+				<a href="{{ URL::previous() }}"><img src="../img/back-btn-white.png"></a>
+				<img id="heart" src="../img/heart-empty.png">
+			</div>
+		<div id="map-canvas"></div>
+
+		<h1><i>{{$spot->spot_name}}</i></h1>
 
 
-			<input type="hidden" name="spot_id" value="{{$spot->spot_id}}">
-			<input type="hidden" id="lat" value="{{$spot->latitude}}">
-			<input type="hidden" id="lang" value="{{$spot->longitude}}">
+		<input type="hidden" id="spot_id" value="{{$spot->spot_id}}">
+		<input type="hidden" id="lat" value="{{$spot->latitude}}">
+		<input type="hidden" id="lng" value="{{$spot->longitude}}">
 
-			<p>Spot name: <input type="text" name="spot_name" value="{{$spot->spot_name}}" readonly></p>
+		<!-- {{Auth::user()->id}} -->
+		<div id="comments">
+			<h3>Comments: </h3>
+			<p>{{$spot->comments}}</p>
+		</div>			
 
-			<p>Location notes: <textarea readonly>{{$spot->location_notes}}</textarea></p>
-
-			<p>Comments: <textarea readonly>{{$spot->comments}}</textarea></p>			
-
-			<!-- TODO get view-directions working -->
-			<a href="{{ URL::route('view-directions', $spot->latitude, $spot->longitude) }}">View directions</a>
-			<a href="{{ URL::previous() }}">Back</a>
+		<!-- TODO get view-directions working 
+		<a href="{{ URL::route('view-directions', $spot->latitude, $spot->longitude) }}">View directions</a>
+		<a href="{{ URL::previous() }}">Back</a> -->
 			
-			{{ Form::token() }}
-	
-		{{ HTML::script('js/fetch-location.js') }}
+		{{ Form::token() }}
+
+
+
+		<!-- JQuery -->
+		{{ HTML::script('js/jquery-1.11.1.min.js') }}
+		<!-- map js -->
+		{{ HTML::script('js/view-spot.js') }}
 	</body>
 </html>

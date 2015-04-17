@@ -31,8 +31,6 @@
 									<a href="{{ URL::route('view-spot', $spot->spot_id) }}">View spot</a>
 								</button>
 							
-
-
 							<input type="hidden" class="lat" value="{{ $spot->latitude }}" name="lat">
 							<input type="hidden" class="lng" value="{{ $spot->longitude }}" name="lng">
 							<input type="hidden" class="spot-name" value="{{ $spot->spot_name }}">

@@ -58,7 +58,19 @@ Route::group(array('before' => 'auth'), function() {
 		'uses'	=> 'SearchController@searchNearMe'
 	));
 
-	//main map AJAX REQUEST
+	//favourited
+	Route::get('/favourited', array(
+		'as'	=> 'favourited',
+		'uses'	=> 'ProfileController@favourited'
+	));
+
+	//favourites
+	Route::get('/favourites', array(
+		'as'	=> 'favourites',
+		'uses'	=> 'ProfileController@favourites'
+	));
+
+	//main map AJAX REQUEST /*not used?*/
 		Route::get('/location/ajax', array(
 			'as' => 'home-map-ajax',
 			'uses' => 'HomeController@ajaxHomeMap'
