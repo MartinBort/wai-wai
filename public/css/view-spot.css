@@ -57,6 +57,20 @@
 	margin-top: 5;
 }
 
-#directions-btn {
+/* edit spot css */
+#edit-name {
+	position: relative;
+	width: 100%;
+	height: 40px;
+}
 
+#edit-notes {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+#edit-name, #edit-notes {
+	padding-left: 10px;
 }

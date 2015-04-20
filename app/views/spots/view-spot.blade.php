@@ -41,6 +41,7 @@
 		<button class="btn yellow-btn">View on map</button>
 
 		<input type="hidden" id="spot_id" value="{{$spot->spot_id}}">
+		<input type="hidden" id="spot_name" value="{{$spot->spot_name}}">
 		<input type="hidden" id="lat" value="{{$spot->latitude}}">
 		<input type="hidden" id="lng" value="{{$spot->longitude}}">		
 

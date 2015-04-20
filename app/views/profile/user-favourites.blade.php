@@ -9,28 +9,20 @@
 		{{ HTML::style('css/menu-list.css') }}
 	</head>
 
-		@if(Session::has('global'))
-			<p> {{ Session::get('global') }} </p>
-
-		@endif
 		<a href="{{ URL::route('home') }}"><img src="img/back-btn-black.png"></a>
 
-		 <h2>{{ $user->username }}</h2><br>
-		<i>My tagged spots:</i><br>
+		 <h2>Favourites</h2>
 
 		
-		@foreach ($user->spots as $spots)
+		@foreach ($favourites as $favourite)
 		<div class="row">
-				<a href="{{ URL::route('view-spot', $spots->spot_id) }}">{{ $spots->spot_name }}</a> 
-				<button class="view-spot-btn"><a href="{{ URL::route('edit-spot', $spots->spot_id) }}">Edit spot</a></button>
+				{{ $favourite->spot_name}}
+			
+				<a href="{{ URL::route('view-spot', $favourite->spot_id) }}">{{ $spots->spot_name }}</a> 
+				<button class="view-spot-btn"><a href="{{ URL::route('edit-spot', $favourite->spot_id) }}">Edit spot</a></button>
+				
 		</div>
 		@endforeach
 		
 
 	</head>
-
-
-
-
-
-

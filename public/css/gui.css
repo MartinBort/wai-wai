@@ -23,6 +23,11 @@ body {
 	color: #363636;
 }
 
+.red-btn {
+	border: 2px solid #e74c3c;
+	color: #e74c3c;
+}
+
 .yellow-btn {
 	border: 2px solid #F0B011;
 	color: #F0B011;
@@ -51,6 +56,10 @@ body {
 /* remove link styling */
 a { text-decoration: none; }
 a:visited, a:link {	color: #FFF; }
+
+.red-btn a, .red-btn a:visited, .red-btn a:link {
+	color :#e74c3c;
+}
 
 
 /* gradient bar for map */

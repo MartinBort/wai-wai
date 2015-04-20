@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Edit Spot</title>
-		
+		<title>Wai Wai</title>
+		<!-- Prevent iphone browsers from zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- gmaps -->
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		{{ HTML::style('css/normalize.min.css') }}
+		{{ HTML::style('css/view-spot.css') }}
+		{{ HTML::style('css/gui.css') }}
 	</head>
 	<body>
-		<h1><i>Edit Spot {{$spot->spot_name}}</i></h1>
+		<div id="top-bar">
+				<a href="{{ URL::previous() }}"><img src="../img/back-btn-white.png"></a>
+			</div>
+		<div id="map-canvas"></div>
+		<h1 id='spot-title'><i>{{$spot->spot_name}}</i></h1>
 		
-		<div id="map-canvas" style="height:200px;width:300px;"></div>
-
 		<form action="{{ URL::route('edit-spot-post') }}" method="post">
+				<h2>Edit spot</h2>
 
-			<input type="hidden" name="spot_id" value="{{$spot->spot_id}}">
-			<input type="hidden" id="lat" value="{{$spot->latitude}}">
-			<input type="hidden" id="lang" value="{{$spot->longitude}}">
+				<input type="hidden" name="spot_id" value="{{$spot->spot_id}}">
+				<input type="hidden" id="lat" value="{{$spot->latitude}}">
+				<input type="hidden" id="lng" value="{{$spot->longitude}}">
 
-			<p>Spot name: <input type="text" name="spot_name" value="{{$spot->spot_name}}"></p>
+				<p>Spot name: </p>
+				<input id="edit-name" type="text" name="spot_name" value="{{$spot->spot_name}}">
 
-			<p>Location notes: <input type="textarea" name="location_notes" value="{{$spot->location_notes}}"></p>
+				<p>Notes: </p>
+				<input id="edit-notes" type="textarea" name="comments" value="{{$spot->comments}}">
 
-			<p>Comments: <input type="textarea" name="comments" value="{{$spot->comments}}"></p>			
+				<input type="submit" value="Save Changes" class="btn black-btn">
+				{{ Form::token() }}
 
-			<input type="submit" value="Save Changes">
-			<a href="{{ URL::route('user-home') }}">Cancel</a><br><br><br>
+			</form>		
+
+		<button class="btn red-btn">
 			<a href="{{ URL::route('delete-spot', $spot->spot_id) }}" onClick="confirm('Click OK to delete spot')">Delete spot</a>
-
-			{{ Form::token() }}
-
-		</form>
+		</button>
 	
 		{{ HTML::script('js/fetch-location.js') }}
 	</body>

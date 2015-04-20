@@ -1,6 +1,7 @@
 var lat = $('#lat').val();
 var lng = $('#lng').val();
 var spot_id = $('#spot_id').val();
+var spot_name = $('#spot_name').val();
 var spotLatLng = new google.maps.LatLng(lat,lng);
 
 var map;
@@ -60,7 +61,7 @@ $('#heart').click(function(){
 	dataType: 'json',
 	url: 'http://localhost/shimiya/public/favourites',
 	//url: 'http://waiwai.space/favourites',
-	data: {spot_id: spot_id}, //make associative array with geolocation
+	data: {spot_id: spot_id, spot_name: spot_name}, //make associative array with geolocation
 	success: function(data){
 
 			

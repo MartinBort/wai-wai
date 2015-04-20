@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'bjorkie88@gmail.com', 'name' => 'Auth'),
+	'from' => array('address' => 'waiwaispace@gmail.com', 'name' => 'Auth'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'bjorkie88@gmail.com',
+	'username' => 'waiwaispace@gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'boi1da0909',
+	'password' => 'waiwai0909',
 
 	/*
 	|--------------------------------------------------------------------------

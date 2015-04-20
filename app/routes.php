@@ -70,6 +70,12 @@ Route::group(array('before' => 'auth'), function() {
 		'uses'	=> 'ProfileController@favourites'
 	));
 
+	//favourites (GET)
+	Route::get('/my-favourites', array(
+		'as'	=> 'user-favourites',
+		'uses'	=> 'ProfileController@myFavourites'
+	));
+
 	//main map AJAX REQUEST /*not used?*/
 		Route::get('/location/ajax', array(
 			'as' => 'home-map-ajax',

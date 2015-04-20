@@ -23,6 +23,15 @@ class ProfileController extends BaseController {
 
 	}
 
+	public function myFavourites() {
+
+		$user_id 	= Auth::user()->id; //get id of user logged in
+		$favourites = Favourite::where('user_id', '=', $user_id);
+
+		return View::make('profile.user-favourites')->with('favourites', $favourites);
+
+	}
+
 	public function favourited() {
 
 		//this function checks for if favourite already exists
@@ -54,8 +63,9 @@ class ProfileController extends BaseController {
 			//this function adds or deleted favourite on click
 
 			//get relevant data for DB insert
-			$spot_id = Input::get('spot_id');
-			$user_id = Auth::user()->id;
+			$spot_id	= Input::get('spot_id');
+			$spot_name 	= Input::get('spot_name');
+			$user_id 	= Auth::user()->id;
 
 			//query DB if favourite exists
 			$query = Favourite::where('spot_id', '=', $spot_id)
@@ -67,6 +77,7 @@ class ProfileController extends BaseController {
 			    //doesnt exist - create record
 			    $favourite 				= new Favourite;
 			    $favourite->spot_id 	= $spot_id;
+			    $favourite->spot_name 	= $spot_name;
 			    $favourite->user_id 	= $user_id;
 			    $favourite->save();
 
