@@ -75,7 +75,7 @@ class SearchController extends BaseController {
 										  FROM spots AS z
 										  JOIN (   /* these are the query parameters */
 										        SELECT  '$latpoint'  AS latpoint,  '$longpoint' AS longpoint, /*pass lat lng variables*/
-										                500.0 AS radius,      111.045 AS distance_unit
+										                10.0 AS radius,      111.045 AS distance_unit
 										    ) AS p ON 1=1
 										  WHERE z.latitude
 										     BETWEEN p.latpoint  - (p.radius / p.distance_unit)
@@ -84,10 +84,13 @@ class SearchController extends BaseController {
 										     BETWEEN p.longpoint - (p.radius / (p.distance_unit * COS(RADIANS(p.latpoint))))
 										         AND p.longpoint + (p.radius / (p.distance_unit * COS(RADIANS(p.latpoint))))
 										  ORDER BY distance_in_km
-										  LIMIT 5"));
+										  LIMIT 10"));
 
-		//return result to view
-		//return View::make('search/near-me')->with('results', $results);
+		/* raw sql by Ollie Jones - referenced from
+		http://www.plumislandmedia.net/mysql/haversine-mysql-nearest-loc/
+		*/
+
+
 		if(Request::ajax()){
 
 				    return json_encode($results);  //turn the result value to JSON so it can be handled in JQuery

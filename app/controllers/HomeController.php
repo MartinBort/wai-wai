@@ -16,12 +16,12 @@ class HomeController extends BaseController {
 		
 	}
 
-	public function getHomeMap() /*not used?*/
+	public function getHomeMap() /*depracted */
 	{
 		return View::make('home-map');		
 	}
 
-	public function ajaxHomeMap()
+	public function ajaxHomeMap() /*depracted */
 	{
 		$latpoint = Input::get('latitude');
 		$longpoint = Input::get('longitude');

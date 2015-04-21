@@ -26,7 +26,7 @@ class ProfileController extends BaseController {
 	public function myFavourites() {
 
 		$user_id 	= Auth::user()->id; //get id of user logged in
-		$favourites = Favourite::where('user_id', '=', $user_id);
+		$favourites = Favourite::where('user_id', '=', $user_id)->get();
 
 		return View::make('profile.user-favourites')->with('favourites', $favourites);
 

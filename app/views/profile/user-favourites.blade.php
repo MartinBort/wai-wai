@@ -16,10 +16,10 @@
 		
 		@foreach ($favourites as $favourite)
 		<div class="row">
-				{{ $favourite->spot_name}}
 			
-				<a href="{{ URL::route('view-spot', $favourite->spot_id) }}">{{ $spots->spot_name }}</a> 
-				<button class="view-spot-btn"><a href="{{ URL::route('edit-spot', $favourite->spot_id) }}">Edit spot</a></button>
+				<a href="{{ URL::route('view-spot', $favourite->spot_id) }}" class="favourite">
+					{{ $favourite->spot_name }}
+				</a> 
 				
 		</div>
 		@endforeach

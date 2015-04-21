@@ -49,7 +49,7 @@
 				<div class="profileMenuBtnWrapper">
 					<a href="{{ URL::route('user-home') }}"><button class="profileMenuBtn">My spots</button></a>
 					<a href="{{ URL::route('user-favourites') }}"><button class="profileMenuBtn">Favourites</button></a>
-					<button class="profileMenuBtn">Account settings</button>
+					<a href="{{ URL::route('account-change-password') }}"><button class="profileMenuBtn">Account settings</button></a>
 					<a href="{{ URL::route('account-sign-out') }}"><button class="profileMenuBtn sign-out-btn">Sign out</button></a>
 				</div>
 		</div>

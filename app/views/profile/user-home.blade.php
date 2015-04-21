@@ -9,6 +9,7 @@
 		{{ HTML::style('css/menu-list.css') }}
 	</head>
 
+		<!-- checks if global message is included with redirect -->
 		@if(Session::has('global'))
 			<p> {{ Session::get('global') }} </p>
 

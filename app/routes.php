@@ -27,7 +27,7 @@ Route::group(array('before' => 'auth'), function() {
 		));
 
 		//tag spot (POST)
-		Route::post('/account/change-password', array(
+		Route::post('/account/new-spot', array(
 		'as' 	=> 'create-spot',
 		'uses'	=> 'SpotController@postCreateSpot'
 		));
