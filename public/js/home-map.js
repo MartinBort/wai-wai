@@ -32,6 +32,14 @@ function initialize() {
       map.setCenter(pos);
 
 
+       /*--
+      CENTER MAP ON LOCATION
+      --*/
+      $('#centerBtn').click(function(){
+        map.panTo(pos);
+      });
+
+
       /*---
       MARKER ANIMATION + LAT LANG CHANGE ON DRAG
       ---*/
@@ -75,8 +83,6 @@ $('#centreMarker').click(function(){
     .appendTo('body')
     .submit();
   });
-
-
 
 
 /*---
