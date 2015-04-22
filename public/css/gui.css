@@ -82,3 +82,11 @@ a:visited, a:link {	color: #FFF; }
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131313', endColorstr='#034c4c4c',GradientType=0 ); /* IE6-9 */
 	copy
 }
+
+/* Global message */
+#global {
+	position: relative;
+	background-color: #D1D1D1;
+	color: #707070;
+	z-index: 100px;
+}

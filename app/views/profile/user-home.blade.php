@@ -20,7 +20,7 @@
 		<i>My tagged spots:</i><br>
 
 		
-		@foreach ($user->spots as $spots)
+		@foreach ($user->spots->reverse() as $spots)
 		<div class="row">
 				<a href="{{ URL::route('view-spot', $spots->spot_id) }}">{{ $spots->spot_name }}</a> 
 				<button class="view-spot-btn"><a href="{{ URL::route('edit-spot', $spots->spot_id) }}">Edit spot</a></button>

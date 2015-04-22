@@ -35,12 +35,12 @@ class AccountController extends BaseController {
 					return Redirect::intended('/');
 				} else {
 					return Redirect::route('account-sign-in')
-					->with('global', 'Email/password incorrect, or account not activated.');
+					->with('global', '<div id="global"><p>Email/password incorrect, or account not activated.</p></div>');
 				}
 			}
 
 			return Redirect::route('account-sign-in')
-					->with('global', 'There was a problem signing you in.');
+					->with('global', '<div id="global"><p>There was a problem signing you in.</p></div>');
 	}
 
 	public function getSignOut() {

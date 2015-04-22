@@ -56,8 +56,8 @@ class SpotController extends BaseController {
 				$tag->save();			    
 			}
 
-	        return Redirect::route('home')
-							->with('global', 'Spot successfully tagged. You can edit all your spots on your profile.');
+	        return Redirect::route('user-home')
+							->with('global', '<div id="global"><p>Spot successfully tagged. You can edit all your spots on your profile.<p/></div>');
 		}
 		
 	}
@@ -117,7 +117,7 @@ class SpotController extends BaseController {
 	        $spot->save();
 
 	        return Redirect::route('user-home')
-							->with('global', 'Changes successfully made to your Spot');
+							->with('global', '<div id="global"><p>Changes successfully made to your Spot</p></div>');
 		}
 
 	}
@@ -139,7 +139,7 @@ class SpotController extends BaseController {
 			$tags->delete();
 
 			return Redirect::route('user-home')
-				->with('global', 'Spot successfully deleted');
+				->with('global', '<div id="global"><p>Spot successfully deleted</p></div>');
 			}
 
 	}

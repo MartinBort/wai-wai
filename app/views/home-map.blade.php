@@ -14,6 +14,9 @@
 		{{ HTML::style('css/search-panel.css') }}
 	</head>
 	<body>
+		@if(Session::has('global'))
+			<p> {{ Session::get('global') }} </p>
+		@endif
 
 		<div id="map-canvas"></div>
 
