@@ -8,13 +8,13 @@
 		{{ HTML::style('css/gui.css') }}
 		{{ HTML::style('css/menu-list.css') }}
 	</head>
+		<a href="{{ URL::route('home') }}"><img src="img/back-btn-black.png"></a>
 
 		<!-- checks if global message is included with redirect -->
 		@if(Session::has('global'))
 			<p> {{ Session::get('global') }} </p>
 
 		@endif
-		<a href="{{ URL::route('home') }}"><img src="img/back-btn-black.png"></a>
 
 		 <h2>{{ $user->username }}</h2><br>
 		<i>My tagged spots:</i><br>

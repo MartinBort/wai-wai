@@ -90,3 +90,53 @@ a:visited, a:link {	color: #FFF; }
 	color: #707070;
 	z-index: 100px;
 }
+
+/* form stylng */
+.field {
+	position: relative;
+	width: 100%;
+	background: rgba(245, 245, 245, 0.9);
+	text-align: center;
+	margin-bottom: 30px;
+
+}
+
+.field input{
+	width: 100%;
+}
+
+/* remember me checkbox */
+.field input[type=checkbox]
+{
+	width: 13px;
+    height: 13px;
+    padding-left: 0;
+    margin-left: 20px;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+}
+/* remember me label*/
+.field label {
+	display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+
+/* center logo on form pages */
+#form-logo {
+	position: relative;
+	top: -50px;
+	left: 50%;
+}
+
+#form-logo img {
+	position: relative;
+	right: 50px;
+}
