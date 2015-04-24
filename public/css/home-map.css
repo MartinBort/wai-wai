@@ -146,3 +146,8 @@ a:visited, a:link {	color: #363636; }
 	padding: 5px;
 }
 
+/* geolocation disabled error message */
+#locationErrorMessage {
+	font-size: 150%;
+	color: #FFF;
+}
