@@ -12,7 +12,7 @@ $('input#searchBox').on('keyup', function(){
 
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost/shimiya/public/search/tags',
+				url: 'http://localhost:8888/wai-wai/public/search/tags',
 				//url: 'http://waiwai.space/search/tags',
 				data: {query: search_query},
 				success: function(data){
@@ -40,7 +40,7 @@ $('input#searchBox').on('keyup', function(){
 
 			$.ajax({
 				type: 'GET',
-				url: 'http://localhost/shimiya/public/search/spots',
+				url: 'http://localhost:8888/wai-wai/public/search/spots',
 				//url: 'http://waiwai.space/search/spots',
 				data: {query: search_query},
 				success: function(data){

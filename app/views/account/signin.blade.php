@@ -23,7 +23,7 @@
 		<form action="{{  URL::route('account-sign-in-post') }}" method="post">
 
 			<div class="field">
-				<h2>Email: </h2><input type="text" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
+				<h2>Email: </h2><input type="email" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
 				@if($errors->has('email'))
 					{{ $errors->first('email') }}
 				@endif
@@ -46,15 +46,18 @@
 				
 			</div>
 
-			<input class="btn yellow-btn" type="submit" value="Sign in">			
+			<!-- submit -->
+			<input class="btn yellow-btn" type="submit" value="Sign in">	
+			<!-- reset password -->
+			<a id="forgotten-pword" href="{{ URL::route('account-forgot-password') }}">
+				<button class="btn black-btn">Forgotten password?</button>
+			</a>		
 
 			{{ Form::token() }}
 
 		</form>
 
-			<a id="forgotten-pword" href="{{ URL::route('account-forgot-password') }}">
-				<button class="btn black-btn">Forgotten password?</button>
-			</a>
+			
 		
 
 	</body>

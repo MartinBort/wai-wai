@@ -40,7 +40,7 @@ $(document).ready(function() {
 		$('#searchBox').attr("placeholder", "Search by spot name...");
 
 		//change form action to search/spots
-		$('#searchbyForm').attr('action', 'http://localhost/shimiya/public/search/spots');
+		$('#searchbyForm').attr('action', 'http://localhost:8888/wai-wai/public/search/spots');
 		//$('#searchbyForm').attr('action', 'http://waiwai.space/search/spots');
 	});
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		$('#searchBox').attr("placeholder", "Search for tags...");
 
 		//change form action to search/tags
-		$('#searchbyForm').attr('action', 'http://localhost/shimiya/public/search/tags');
+		$('#searchbyForm').attr('action', 'http://localhost:8888/wai-wai/public/search/tags');
 		//$('#searchbyForm').attr('action', 'http://waiwai.space/search/tags');
 		
 	});

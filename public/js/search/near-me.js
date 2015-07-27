@@ -11,7 +11,7 @@ $( document ).ready(function() {
 
 		$.ajax({
 					type: 'GET',
-					url: 'http://localhost/shimiya/public/near-me',
+					url: 'http://localhost:8888/wai-wai/public/near-me',
 					//url: 'http://waiwai.space/near-me',
 					data: {lat: lat, lng: lng}, //make associative array with geolocation
 					success: function(results){
@@ -29,7 +29,7 @@ $( document ).ready(function() {
 						//loop through each result
 						$.each(data, function(spots,spot) {
 
-							var spot_url = 'http://localhost/shimiya/public/spot-view/'+spot.spot_id
+							var spot_url = 'http://localhost:8888/wai-wai/public/spot-view/'+spot.spot_id
 							//var spot_url = 'http://waiwai.space/spot-view/'+spot.spot_id
 
 							//get latitude and longitude of spot

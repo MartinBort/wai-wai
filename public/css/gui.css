@@ -103,7 +103,10 @@ a:visited, a:link {	color: #FFF; }
 
 .field input{
 	width: 100%;
+	height: 50px;
+	font-size: 180%;
 }
+
 
 /* remember me checkbox */
 .field input[type=checkbox]

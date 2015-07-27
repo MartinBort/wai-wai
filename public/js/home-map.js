@@ -79,7 +79,7 @@ $('#centreMarker').click(function(){
 
   //Create new form with lat lng, submit it  [http://waiwai.space/tag/current-location]
   //$('<form action="http://waiwai.space/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
-  $('<form action="http://localhost/shimiya/public/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
+  $('<form action="http://localhost:8888/wai-wai/public/tag/current-location"><input type="hidden" value="'+lat+'" name="lat"><input type="hidden" value="'+lng+'" name="lng"></form>')
     .appendTo('body')
     .submit();
   });

@@ -38,7 +38,7 @@ FAVOURITES
 $.ajax({
 	type: 'GET',
 	dataType: 'json',
-	url: 'http://localhost/shimiya/public/favourited',
+	url: 'http://localhost:8888/wai-wai/public/favourited',
 	//url: 'http://waiwai.space/favourited',
 	data: {spot_id: spot_id}, //make associative array with geolocation
 	success: function(data){
@@ -59,7 +59,7 @@ $('#heart').click(function(){
 	$.ajax({
 	type: 'GET',
 	dataType: 'json',
-	url: 'http://localhost/shimiya/public/favourites',
+	url: 'http://localhost:8888/wai-wai/public/favourites',
 	//url: 'http://waiwai.space/favourites',
 	data: {spot_id: spot_id, spot_name: spot_name}, //make associative array with geolocation
 	success: function(data){
