@@ -28,3 +28,17 @@ h2 {
 .btn-wrap {
 	padding: 5px;
 }
+
+/* about page styling */
+.header-img {
+	position: relative;
+	width: 100%;
+	top: -85px;
+	z-index: -10;
+}
+
+.text-wrap {
+	position: relative;
+	padding: 0px 10px 0px 10px;
+	top: -85px;
+}

@@ -23,7 +23,7 @@
 		<form action="{{ URL::route('account-forgot-password-post') }}" method="post">
 			<div class="field">
 				<h3>Enter email to recover account:</h3> 
-				<input type="text" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
+				<input type="email" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
 				@if($errors->has('email'))
 					{{ $errors->first('email') }}
 				@endif

@@ -16,6 +16,11 @@ class HomeController extends BaseController {
 		
 	}
 
+	public function getAbout()
+	{
+		return View::make('tell-me-more');
+	}
+
 	public function getHomeMap() /*depracted */
 	{
 		return View::make('home-map');		

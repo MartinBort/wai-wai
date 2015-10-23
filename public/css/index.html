@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="rightmoveApp">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/searchProperties.js"></script>
+	<script src="app/angular-smooth-scroll.min.js"></script>
+	<script src="app/filters/priceRangeFilter.js"></script>
+	<script src="app/filters/bedroomFilter.js"></script>
+	<script src="app/filters/propertyTypeFilter.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/build/style.css">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title></title>
+</head>
+<body>
+<div class="wrapper" ng-controller="MainController">
+
+    <div class="hero">
+        <header>
+            <img src="assets/img/logo-white.png">
+			<ul>
+              	<li><a href="">Blog</a></li>
+              	<li><a href="">Agents</a></li>
+              	<li><a href="">Students</a></li>
+               	<li><a href="">Commercial</a></li>
+            </ul>
+        </header>
+        <!-- mobile -->
+        <div class="mobile-header">
+        	<img src="assets/img/house-logo2.png">
+        </div>
+        <!-- /mobile -->
+        <form class="search-banner">
+            <div class="search-wrap">
+                <span>
+                    <input type="search" placeholder="Search a location..." ng-model="searchTerm"></input>
+                    <img src="assets/img/search-icon.png">
+                </span>
+            </div>
+            <div class="btn-wrap">
+                <button class="btn" ng-click="submitSearch(searchTerm)">For sale</button>
+                <button class="btn">To rent</button>
+            </div>
+        </form>
+    </div><!-- /hero -->
+
+
+    <div id="results" class="results-filters-wrap" ng-show="showResults">
+    	<div class="mobile-filter-btn">
+    		<button ng-click="propertyFilters = !propertyFilters">Search filters</button>
+    	</div>
+
+        <div class="property-filters" ng-show="propertyFilters">
+            <div class="filter">
+                <p>Search radius</p>
+                <div>
+                    <div class="select-wrap">
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+                <p>Price range (£)</p>
+                <div>
+                    <div class="select-wrap">
+                        <select ng-model="minprice.value" ng-options="option.value as option.text for option in minpriceValues | removeMinPriceValues:maxprice" required></select>
+                    </div>
+                    <div class="select-wrap">
+                        <select ng-model="maxprice.value" ng-options="option.value as option.text for option in maxpriceValues | removeMaxPriceValues:minprice" required></select>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+                <p>No. of bedrooms</p>
+                <div>
+                    <div class="select-wrap">
+                        <select ng-model="minbedrooms.value" ng-options="option.value as option.text for option in minbedroomsValues | removeMinBedroomValues:maxbedrooms" required></select>
+                    </div>
+                    <div class="select-wrap">
+                        <select ng-model="maxbedrooms.value" ng-options="option.value as option.text for option in maxbedroomsValues | removeMaxBedroomeValues:minbedrooms" required></select>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+                <p>Property type</p>
+                <div>
+                    <div class="select-wrap">
+                        <select ng-model="propertyType.value" ng-options="option.value as option.text for option in propertyTypeValues"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div> <!-- remove this? -->
+            <div class="result" ng-repeat="result in results | orderBy: 'price' | priceRangeFilter:minprice:maxprice | bedroomFilter:minbedrooms:maxbedrooms | propertyTypeFilter:propertyType">
+                <div class="img-wrap">
+                    <p>{{ result.price | currency:"£":0 }}</p>
+                    <img ng-src="assets/img/properties/{{ result.img }}" title="{{result.title}}">
+                </div>
+                <p><a href="">{{ result.title }}</a></p>
+                <i>{{ result.address }}, {{ result.postcode }}</i>
+                <input type="hidden" value="{{ result.bedrooms }}">
+                <input type="hidden" value="{{ result.propertyType }}">
+            </div> <!-- remove this? -->
+        </div>
+    </div>
+</div><!-- /wrapper -->
+
+
+
+</body>
+</html>

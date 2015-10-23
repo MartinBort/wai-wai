@@ -204,5 +204,12 @@ Route::group(array('before' => 'guest'), function() {
 			'as' 	=> 'account-activate',
 			'uses' 	=> 'AccountController@getActivate'
 
-		));
+	));
+
+	//tell me more (GET)
+	Route::get('/about', array(
+
+		'as' => 'tell-me-more',
+		'uses' => 'HomeController@getAbout'
+	));
 });

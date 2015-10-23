@@ -19,7 +19,7 @@
 
 			<div class="field">
 				<h3>Email:</h2> 
-					<input type="text" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
+					<input type="email" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
 					@if($errors->has('email'))
 						{{ $errors->first('email')}}
 					@endif

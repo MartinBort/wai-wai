@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		@if(Session::has('global'))
-			<p> {{ Session::get('global') }} </p>
+			<p id="global"> {{ Session::get('global') }} </p>
 		@endif
 
 		
@@ -30,7 +30,7 @@
 
 			<h2>Wai Wai. A treasure map for Tokyo</h2>
 			<div class="btn-wrap">
-				<a href="">
+				<a href="{{ URL::route('tell-me-more') }}">
 					<button class="btn black-btn">Tell me more</button>
 				</a>
 				<a href="{{ URL::route('account-create') }}">
