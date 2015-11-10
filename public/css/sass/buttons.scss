@@ -1,0 +1,73 @@
+.btn {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    background: $transparent;
+    @include border-top-radius(5px);
+    @include border-bottom-radius(5px);
+    color: #000;
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: 200;
+}
+
+.btn-yellow {
+    color: #FFF;
+    border: 1px solid $transparent;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0b011+0,f5c72d+100 */
+    background: #f0b011;
+    background: -moz-linear-gradient(top, #f0b011 0%, #f5c72d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f0b011), color-stop(100%, #f5c72d));
+    background: -webkit-linear-gradient(top, #f0b011 0%, #f5c72d 100%);
+    background: -o-linear-gradient(top, #f0b011 0%, #f5c72d 100%);
+    background: -ms-linear-gradient(top, #f0b011 0%, #f5c72d 100%);
+    background: linear-gradient(to bottom, #f0b011 0%, #f5c72d 100%);
+    &:hover {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d99f0f+10,f5c72c+50 */
+        background: #d99f0f;
+        background: -moz-linear-gradient(top, #d99f0f 10%, #f5c72c 50%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #d99f0f), color-stop(50%, #f5c72c));
+        background: -webkit-linear-gradient(top, #d99f0f 10%, #f5c72c 50%);
+        background: -o-linear-gradient(top, #d99f0f 10%, #f5c72c 50%);
+        background: -ms-linear-gradient(top, #d99f0f 10%, #f5c72c 50%);
+        background: linear-gradient(to bottom, #d99f0f 10%, #f5c72c 50%);
+    }
+}
+
+.btn-black {
+    &:hover {
+        border: 1px solid #6D00B2;
+        color: #6D00B2;
+    }
+}
+
+.login-btn {
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    padding: 12px 10px 10px 37px;
+    background: rgba(255, 255, 255, 0.95);
+    @include border-top-radius(50px);
+    @include border-bottom-radius(50px);
+    color: $gray;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 400;
+    &:hover {
+        color: #FFF;
+        background: rgba(245, 199, 45, 0.95);
+    }
+}
+
+
+/* background: #1881bd;
+    background: -moz-linear-gradient(top, #1881bd 0%, #8ccef3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1881bd), color-stop(100%, #8ccef3));
+    background: -webkit-linear-gradient(top, #1881bd 0%, #8ccef3 100%);
+    background: -o-linear-gradient(top, #1881bd 0%, #8ccef3 100%);
+    background: -ms-linear-gradient(top, #1881bd 0%, #8ccef3 100%);
+    background: linear-gradient(to bottom, #1881bd 0%, #8ccef3 100%); */

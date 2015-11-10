@@ -1,0 +1,11 @@
+body {
+	@include outer-container(100%);
+}
+.desktop-wrapper {
+	@include outer-container(900px);
+	text-align: center;
+	margin-top: 50px;
+}
+.desktop-hero-img {
+	width: 300px;
+}

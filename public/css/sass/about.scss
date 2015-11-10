@@ -1,0 +1,32 @@
+.gray-text {
+	color: #BFBFBF;
+}
+.about-img1 {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+.about-dictionary {
+	position: relative;
+	max-width: 85%;
+	margin: 0 auto;
+	top: 80px;
+	padding: 12px;
+	border: 1px solid #BFBFBF;
+	background: rgba(255, 255, 255, 0.95);
+}
+.about-speaker-icon {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+	margin-left: 30px;
+	cursor: pointer;
+}
+.about-text-wrap {
+	position: relative;
+	margin-top: 100px;
+	padding: 0px 10px 0px 10px;
+}

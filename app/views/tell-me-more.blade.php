@@ -4,44 +4,59 @@
 		<title>Wai Wai</title>
 		<!-- Prevent iphone browsers from zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<!-- normalize.css for resetting css across all browsers -->
-		{{ HTML::style('css/normalize.min.css') }}
-		<!-- custom css -->
-		{{ HTML::style('css/home.css') }}
-		{{ HTML::style('css/gui.css') }}
 		<!-- favicon -->
 		<link rel="shortcut icon" href="img/favicon.ico">
+		{{ HTML::style('css/build/style.css') }}
 	</head>
 	<body>
-		<a href="{{ URL::route('home') }}"><img src="../public/img/back-btn-black.png"></a>
-		<div id="form-logo"><img src="../public/img/banner/logo.png"></div>
+		<div class="wrapper">
+			<a class="form-back-btn" href="{{ URL::route('home') }}"><img src="../public/img/back-btn-white.png"></a>
+			<img class="about-img1" src="../public/img/about/about1.jpg">
+				<div class="about-dictionary">
+						<h1>わい わい</h1>
+						<p class="gray-text">
+							<i>Adverb</i>
+							<img class="about-speaker-icon" src="../public/img/speaker.png" onclick="play()">
+						</p>
+						<audio id="audio">
+							<source src="../public/audio/waiwai.m4a">
+							<source src="../public/audio/waiwai.mp3">
+							<source src="../public/audio/waiwai.ogg">
+						</audio>
+						<p>Pronounced <i>"wah-i wah-i"</i></p>
+						<h3><span class="gray-text">1. </span> A Japanese onomatopeia for the ambient noise 
+						of many people talking at once in a lively or festive manner.</h3>						
+				</div>
 
-			<img src="../public/img/about/about1.png" class="header-img">
-			<div class="text-wrap">
-				<p>The word Wai-Wai is a Japanese onomatopeia for the ambient noise 
-				of many people talking at once in a lively or festive manner. Be it at
-				a park, bar or just out and about.</p>
-				<p>waiwai.space is a way to discover and share places of interest within
-				Tokyo.</p>
-				<p>Tokyo is an amazing city to get lost in, you'll come across a vast
-				landscape of quirks and amusements.</p>
-				<p>Use waiwai.space as way to tag areas undiscovered to wanderers or for
-				you yourself to explore the depths of the city</p>
-
+				<div class="about-text-wrap">
+					<h3>Tokyo is a city full of amazing experiences waiting to be sought out. We want you to help
+					curate these experiences so they can all be found in one place.</h3>
+					<br>
+					<h2>Explore and tag</h2>
+					<p>Tag all your favourite spots, no matter how niche or obscure. Use multiple tags to 
+					make it easier for other users to narrow down the search.</p>
+					<br>
+					<h2>Search and Discover</h2>
+					<p>Search by name, tags or by proximity to your location. Save your favourite spots so 
+					you can find them later</p>
+				</div>
+				
+			<div class="btn-wrap">
+				<form action="{{ URL::route('home') }}" method="get">
+					<button class="btn btn-black">Go back</button>
+				</form>	
+				<form action="{{ URL::route('account-create') }}" method="get">
+					<button class="btn btn-yellow">Sign me up!</button>
+				</form>		
 			</div>
-			
-		<div class="btn-wrap">
-				<a href="{{ URL::route('account-create') }}">
-					<button class="btn yellow-btn">Sign me up!</button>
-				</a>
-			</div>
+		</div>
 		
-
-		
-
-
 		{{ HTML::script('js/jquery-1.11.1.min.js') }}
+		<script type="text/javascript">
+			function play(){
+		       var audio = document.getElementById("audio");
+		       audio.play();
+		    }
+		</script>
 	</body>
 </html>

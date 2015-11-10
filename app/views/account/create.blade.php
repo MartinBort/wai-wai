@@ -4,59 +4,65 @@
 		<title>Wai Wai</title>
 		<!-- Prevent iphone browsers from zooming -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Google fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>	
-		<!-- Google maps API -->
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		{{ HTML::style('css/normalize.min.css') }}
-		{{ HTML::style('css/gui.css') }}
+		{{ HTML::style('css/build/style.css') }}
 	</head>
 	<body>
-		<a href="{{ URL::route('home') }}"><img src="../img/back-btn-black.png"></a>
-		<div id="form-logo"><img src="../img/banner/logo.png"></div>
+		<div class="wrapper">
+			<a class="form-back-btn" href="{{ URL::route('home') }}"><img src="../img/back-btn-black.png"></a>
+			<h1 class="form-header">Sign up</h1>
 
-		<form action="{{ URL::route('account-create-post') }}" method="post">
+			<form action="{{ URL::route('account-create-post') }}" method="post">
+				<div class="field-wrapper create-blade">
 
-			<div class="field">
-				<h3>Email:</h2> 
-					<input type="email" name="email" {{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}>
-					@if($errors->has('email'))
-						{{ $errors->first('email')}}
-					@endif
-			</div>
+					<div class="field">
+						<label for="email">Email:</label> 
+							<input 	id="email" 
+									type="email" 
+									name="email" 
+									placeholder="example@email.com" 
+									{{ (Input::old('email')) ? ' value="' . e(Input::old('email')) .'" ' : ' ' }}
+									>
+							@if($errors->has('email'))
+								{{ $errors->first('email')}}
+							@endif
+					</div>
 
-			<div class="field">
-				<h3>Username:</h3>
-					<input type="text" name="username" {{ (Input::old('username')) ? ' value="' . e(Input::old('username')) .'" ' : ' ' }}>
-					@if($errors->has('username'))
-						{{ $errors->first('username')}}
-					@endif
-			</div>
+					<div class="field">
+						<label for="username">Username:</label>
+							<input 	id="username" 
+									type="text" 
+									name="username"
+									placeholder="Pick a username" 
+									{{ (Input::old('username')) ? ' value="' . e(Input::old('username')) .'" ' : ' ' }}
+									>
+							@if($errors->has('username'))
+								{{ $errors->first('username')}}
+							@endif
+					</div>
 
-			<div class="field">
-				<h3>Password:</h3>
-					<input type="password" name="password">
-					@if($errors->has('password'))
-						{{ $errors->first('password')}}
-					@endif
-			</div>
+					<div class="field">
+						<label for="password">Password:</label>
+							<input id="password" type="password" name="password" placeholder="******">
+							@if($errors->has('password'))
+								{{ $errors->first('password')}}
+							@endif
+					</div>
 
-			<div class="field">
-				<h3>Confirm password:</h3> 
-					<input type="password" name="password_confirm">
-					@if($errors->has('password_confirm'))
-						{{ $errors->first('password_confirm')}}
-					@endif
-			</div>
+					<div class="field">
+						<label for="password-confirm">Confirm password:</label> 
+							<input id="password-confirm" type="password" name="password_confirm" placeholder="******">
+							@if($errors->has('password_confirm'))
+								{{ $errors->first('password_confirm')}}
+							@endif
+					</div>
 
+				</div><!-- /.field-wrapper -->
 
-			<input class="btn yellow-btn" type="submit" value="Create account">
-			{{ Form::token() }}
-
-
-
-
-		</form>
-
+				<div class="form-btn-wrapper">
+					<input class="btn btn-yellow" type="submit" value="Create account">
+				</div>
+				{{ Form::token() }}
+			</form>
+		</div><!-- /.wrapper -->
 	</body>
 </html>

@@ -1,0 +1,74 @@
+.wrapper {
+    @include outer-container(100%);
+}
+
+.home-hero {
+    @include fill-parent();
+    position: relative;
+    max-height: 790px;
+}
+
+.home-banner {
+    @include fill-parent();
+    position: absolute;
+    background: $transparent;
+    height: 80px;
+    .logo {
+        position: relative;
+        margin: 10px 0px 0px 10px;
+    }
+}
+
+.hero-img {
+    @include fill-parent();
+}
+
+.home-title {
+    position: absolute;
+    bottom: 0px;
+    padding: 0;
+    margin: 0px 0px 0px 10px;
+    color: #FFF;
+
+    font-size: 250%;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+.home-blurb {
+	margin: 10px;
+	h2 {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+.btn-wrap {
+	//box-sizing: border-box;
+	@include fill-parent();
+	margin-top: 50px;
+	padding: 5px 5px 0px 5px;
+}
+
+/* parallax */
+/* .home-parallax{
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.home-parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.home-parallax__layer--base {
+  transform: translateZ(0);
+}
+.home-parallax__layer--back {
+  transform: translateZ(-1px);
+} */
